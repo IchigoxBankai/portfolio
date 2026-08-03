@@ -1,0 +1,16 @@
+:root{
+
+    --bg:#FAFAFA;
+    --text:#111111;
+    --accent:#E30613;
+    --gray:#6B7280;
+    --border:#E5E7EB;
+
+    --container:1400px;
+
+    --radius:10px;
+
+    --transition:.35s ease;
+    --heading-font: "Bebas Neue", sans-serif;
+    --body-font: "Inter", sans-serif;
+}

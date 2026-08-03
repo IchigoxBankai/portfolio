@@ -1,0 +1,158 @@
+.tech{
+    padding:140px 0;
+      background:
+        radial-gradient(circle at top left,
+            rgba(243, 32, 32, 0.911),
+            transparent 40%),
+        radial-gradient(circle at bottom right,
+            rgb(252, 9, 9),
+            transparent 45%),
+        #5a5757c5;    overflow:hidden;
+
+}
+
+
+
+.cantarell-bold {
+  font-family: "Cantarell", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+   font-size:3.5rem;
+    margin:20px 0 80px;
+    color:#312929
+}
+.cantarell-regular {
+  font-family: "Cantarell", sans-serif;
+  color:#830c0cf8;
+  font-size:large;
+    letter-spacing:3px;
+    
+  font-style: normal;
+  margin-left:.50em;
+  font-weight:bolder;
+}
+
+
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+}
+
+.tech-card{
+
+    position:relative;
+
+    padding:45px 25px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    overflow:hidden;
+
+    animation:float 5s ease-in-out infinite;
+}
+
+.tech-card:nth-child(even){
+    animation-delay:1.5s;
+}
+
+.tech-card:nth-child(3n){
+    animation-delay:3s;
+}
+
+.tech-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    background:radial-gradient(circle,#E30613 0%,transparent 70%);
+
+    top:-150px;
+
+    right:-150px;
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.tech-card:hover::before{
+
+    opacity:.2;
+}
+
+.tech-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border-color:#E30613;
+
+    box-shadow:0 20px 60px rgba(227,6,19,.25);
+}
+
+.tech-icon{
+
+    font-size:70px;
+
+    margin-bottom:25px;
+
+    color:#fff;
+
+    transition:.4s;
+}
+
+.tech-card:hover .tech-icon{
+
+    color:#E30613;
+
+    transform:rotate(12deg) scale(1.2);
+}
+
+.tech-card h3{
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}

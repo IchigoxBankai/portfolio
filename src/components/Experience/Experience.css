@@ -1,0 +1,424 @@
+/* ===========================
+   EXPERIENCE SECTION
+=========================== */
+
+.experience{
+    position: relative;
+    padding: 140px 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 30% 50%,
+            rgba(255, 0, 0, 0.18),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(209, 43, 43, 0.877),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #b1b2b8,
+            #aa9999,
+            #7e7c7c
+        );
+}
+
+.experience-heading{
+    text-align:center;
+    margin-bottom:90px;
+}
+
+.experience-heading span{
+    color:#E30613;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.experience-heading h2{
+    font-size:4.5rem;
+    margin:18px 0;
+    font-weight:900;
+    letter-spacing:-2px;
+    color:#111;
+}
+
+.experience-heading p{
+    max-width:650px;
+    margin:auto;
+    color:#110e0e;
+    line-height:1.8;
+    font-weight:500;
+    font-size:1.08rem;
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+
+.timeline{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    padding:20px 0;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:4px;
+    height:100%;
+    background:linear-gradient(
+        to bottom,
+        #ff3b3b,
+        #E30613,
+        #990000
+    );
+    box-shadow:
+        0 0 15px rgba(255,0,0,.35),
+        0 0 40px rgba(255,0,0,.15);
+}
+
+/* ===========================
+   ITEM
+=========================== */
+
+.timeline-item{
+    position:relative;
+    width:50%;
+    margin-bottom:80px;
+}
+
+.timeline-item.left{
+    left:0;
+    padding-right:70px;
+}
+
+.timeline-item.right{
+    left:50%;
+    padding-left:70px;
+}
+
+/* ===========================
+   DOT
+=========================== */
+
+.timeline-dot{
+    position:absolute;
+    top:45px;
+    width:22px;
+    height:22px;
+    background:#fff;
+    border:5px solid #E30613;
+    border-radius:50%;
+    box-shadow:
+        0 0 18px rgba(255,0,0,.45);
+    z-index:20;
+    animation:pulseDot 2s infinite;
+}
+
+.timeline-item.left .timeline-dot{
+    right:-13px;
+}
+
+.timeline-item.right .timeline-dot{
+    left:-13px;
+}
+
+@keyframes pulseDot{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(227,6,19,.45);
+    }
+
+    70%{
+        box-shadow:0 0 0 18px rgba(227,6,19,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(227,6,19,0);
+    }
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.timeline-card{
+    position:relative;
+    overflow:hidden;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    transition:.45s;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.08);
+}
+
+/* Animated Border */
+
+.timeline-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:28px;
+
+    padding:2px;
+
+    background:
+        linear-gradient(
+        135deg,
+        transparent,
+        #E30613,
+        transparent,
+        #E30613
+    );
+
+    background-size:300% 300%;
+
+    opacity:0;
+
+    transition:.45s;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    animation:borderMove 7s linear infinite;
+}
+
+.timeline-card:hover::before{
+
+    opacity:1;
+}
+
+@keyframes borderMove{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:300% 0;
+    }
+}
+
+.timeline-card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.03);
+
+    box-shadow:
+        0 25px 60px rgba(227,6,19,.18),
+        0 0 40px rgba(227,6,19,.08);
+}
+
+/* ===========================
+   BIG YEAR
+=========================== */
+
+.year-bg{
+
+    position:absolute;
+
+    top:-15px;
+
+    right:25px;
+
+    font-size:120px;
+
+    font-weight:900;
+
+    color:#000;
+
+    opacity:.04;
+
+    pointer-events:none;
+
+    line-height:1;
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.timeline-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:20px;
+
+    background:#E30613;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+    transition:.4s;
+
+    box-shadow:
+        0 10px 30px rgba(227,6,19,.3);
+}
+
+.timeline-card:hover .timeline-icon{
+
+    transform:
+        rotate(-10deg)
+        scale(1.12);
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.timeline-year{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+    color:#E30613;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.timeline-card h3{
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+    color:#111;
+}
+
+.timeline-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+}
+
+/* ===========================
+   BADGES
+=========================== */
+
+.tech-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.tech-badge{
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    background:#f3f3f3;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    transition:.35s;
+}
+
+.tech-badge:hover{
+
+    background:#E30613;
+
+    color:white;
+
+    transform:translateY(-4px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.timeline::before{
+
+left:18px;
+
+}
+
+.timeline-item{
+
+width:100%;
+
+left:0 !important;
+
+padding-left:60px;
+
+padding-right:0;
+
+}
+
+.timeline-dot{
+
+left:8px !important;
+
+}
+
+.timeline-card{
+
+margin-top:15px;
+
+}
+
+.experience-heading h2{
+
+font-size:3rem;
+
+}
+
+.year-bg{
+
+font-size:80px;
+
+}
+
+}
