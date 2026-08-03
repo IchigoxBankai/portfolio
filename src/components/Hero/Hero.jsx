@@ -1,5 +1,5 @@
 import "./Hero.css";
-import heroImage from "../../assets/images/hero/hero1.webp";
+import heroImage from "../../assets/images/hero/av2.jpg";
 import heroBg from "../../assets/images/hero/hero-bg.png";
 import { motion } from "framer-motion";
 
