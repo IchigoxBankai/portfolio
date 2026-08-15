@@ -77,7 +77,7 @@ function About() {
           <div className="about-buttons">
 
             <a
-  href="/resume.pdf"
+  href="resume.pdf"
   download="Nihar_Puthran_Resume.pdf"
   className="resume-btn"
 >

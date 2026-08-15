@@ -116,7 +116,7 @@ function Hero() {
             </motion.a>
 
             <motion.a
-              href="/resume.pdf"
+              href="resume.pdf"
               target="_blank"
               className="hero-btn secondary"
               whileHover={{
