@@ -110,3 +110,29 @@ font-weight: 1000;
   font-weight: 200;
   font-style: normal;
 }
+
+/* Mobile Responsiveness for Loader */
+@media screen and (max-width: 768px) {
+  .loader-content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    width: 90%;
+  }
+
+  .loader-content h2 {
+    margin-left: 0;
+    font-size: 2rem;
+  }
+
+  .loader-content p {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+
+  .loading-bar {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
