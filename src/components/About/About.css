@@ -454,3 +454,15 @@
         justify-content:center;
     }
 }
+
+@media(max-width:480px){
+    .about-content h2{
+        font-size:1.8rem;
+    }
+    .about-image img{
+        max-width: 100%;
+    }
+    .section-tag {
+        font-size: 2rem;
+    }
+}

@@ -257,3 +257,12 @@ grid-template-columns:1fr;
 }
 
 }
+
+@media(max-width:480px){
+    .stat-card{
+        padding: 30px 15px;
+    }
+    .stat-card h2{
+        font-size: 2.5rem;
+    }
+}

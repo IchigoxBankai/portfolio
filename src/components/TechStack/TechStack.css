@@ -156,3 +156,25 @@ transform:translateY(0px);
 }
 
 }
+
+@media(max-width:1000px){
+    .tech-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+@media(max-width:768px){
+    .tech-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .cantarell-bold {
+        font-size: 2.5rem;
+    }
+}
+@media(max-width:480px){
+    .tech-grid{
+        grid-template-columns:1fr;
+    }
+    .cantarell-bold {
+        font-size: 2rem;
+    }
+}

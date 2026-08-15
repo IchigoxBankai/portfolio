@@ -329,3 +329,34 @@
     }
 
 }
+
+@media(max-width:768px){
+    .hero{
+        padding-top: 100px;
+    }
+    .hero-title, .hero-titlee {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+        letter-spacing: -2px;
+    }
+    .hero-role {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .hero-text {
+        font-size: 0.95rem;
+    }
+    .hero-image {
+        width: 100%;
+        max-width: 320px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-btn {
+        width: 100%;
+    }
+    .hero-container {
+        gap: 50px;
+    }
+}

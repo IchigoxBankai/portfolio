@@ -422,3 +422,26 @@ font-size:80px;
 }
 
 }
+
+@media(max-width:480px){
+    .experience-heading h2{
+        font-size:2.2rem;
+    }
+    .timeline-card{
+        padding:25px;
+    }
+    .timeline-card h3{
+        font-size:1.5rem;
+    }
+    .timeline-item{
+        padding-left:40px;
+    }
+    .timeline::before{
+        left: 10px;
+    }
+    .timeline-dot{
+        left: -1px !important;
+        width: 16px;
+        height: 16px;
+    }
+}

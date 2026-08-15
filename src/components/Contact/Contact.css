@@ -143,3 +143,17 @@
 
     color:black;
 }
+
+@media(max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width: 480px) {
+    .contact {
+        padding: 100px 0;
+    }
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+}

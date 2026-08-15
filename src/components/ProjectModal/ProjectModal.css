@@ -155,3 +155,23 @@
         font-size:2.2rem;
     }
 }
+
+@media(max-width:480px){
+    .modal-content{
+        padding: 20px;
+    }
+    .modal-content h2{
+        font-size: 1.8rem;
+    }
+    .modal-buttons{
+        flex-direction: column;
+        width: 100%;
+    }
+    .live-btn, .github-btn{
+        width: 100%;
+        justify-content: center;
+    }
+    .modal-image {
+        height: 250px;
+    }
+}

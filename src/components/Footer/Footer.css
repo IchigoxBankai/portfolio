@@ -110,3 +110,20 @@
 
     color:#777;
 }
+
+@media(max-width: 480px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+    .footer h2 {
+        font-size: 2rem;
+    }
+    .footer-socials {
+        gap: 15px;
+    }
+    .footer-socials a {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}

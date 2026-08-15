@@ -392,3 +392,22 @@
     }
 
 }
+
+@media(max-width:480px){
+    .projects-title{
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    .project-image{
+        height:200px;
+    }
+    .project-content{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .view-btn {
+        padding: 12px 24px;
+        transform: translateY(0); 
+    }
+}
