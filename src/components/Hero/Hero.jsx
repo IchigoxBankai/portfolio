@@ -1,5 +1,5 @@
 import "./Hero.css";
-import heroImage from "../../assets/images/hero/hero2.jpg";
+import heroImage from "../../assets/images/hero/av2.jpg";
 import heroBg from "../../assets/images/hero/hero-bg.png";
 import { motion } from "framer-motion";
 
@@ -41,10 +41,10 @@ const item = {
 function Hero() {
   return (
     <section className="hero" id="home">
-<div
-  className="hero-background"
-  style={{ backgroundImage: `url(${heroBg})` }}
-></div>
+      <div
+        className="hero-background"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      ></div>
       <div className="container hero-container">
 
         {/* LEFT */}
@@ -68,7 +68,7 @@ function Hero() {
             variants={item}
           >
             Nihar <br />
-            
+
           </motion.h1>
           <motion.h1
             className="hero-titlee"
@@ -116,8 +116,10 @@ function Hero() {
             </motion.a>
 
             <motion.a
-              href="resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              download="Nihar_Puthran_Resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               className="hero-btn secondary"
               whileHover={{
                 scale: 1.06,

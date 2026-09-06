@@ -77,13 +77,15 @@ function About() {
           <div className="about-buttons">
 
             <a
-  href="resume.pdf"
-  download="Nihar_Puthran_Resume.pdf"
-  className="resume-btn"
->
-  <FaDownload />
-  Download Resume
-</a>
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              download="Nihar_Puthran_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-btn"
+            >
+              <FaDownload />
+              Download Resume
+            </a>
 
             <a
               href="#contact"

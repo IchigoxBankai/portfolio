@@ -82,18 +82,13 @@ function Services() {
 
               </div>
 
-          <button
-  className="service-link"
-  onClick={() =>
-    window.open(
-      "https://wa.me/918591575101?text=Hi%20Nihar!%20I%20found%20your%20portfolio.",
-      "_blank"
-    )
-  }
->
-  Let's Talk
-  <FaArrowRight />
-</button>
+          <a
+            href="#contact"
+            className="service-link"
+          >
+            Let's Talk
+            <FaArrowRight />
+          </a>
 
             </div>
 
