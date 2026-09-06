@@ -7,8 +7,8 @@ import {
   FaReact,
   FaGitAlt,
   FaGithub,
-  FaFigma,
   FaNodeJs,
+  FaPython,
 } from "react-icons/fa";
 
 import {
@@ -16,19 +16,22 @@ import {
   SiVercel,
   SiMongodb,
   SiTailwindcss,
+  SiExpress,
 } from "react-icons/si";
 
 const skills = [
-  { icon: <FaHtml5 color="#E34F26" />, title: "HTML5" },
-  { icon: <FaCss3Alt color="#1572B6" />, title: "CSS3" },
-  { icon: <FaJsSquare color="#F7DF1E" />, title: "JavaScript" },
-  { icon: <FaReact color="#61DAFB" />, title: "React" },
-  { icon: <SiFirebase color="#FFCA28" />, title: "Firebase" },
-  { icon: <FaNodeJs color="#5FA04E" />, title: "Node.js" },
-  { icon: <FaGitAlt color="#F05032" />, title: "Git" },
-  { icon: <FaGithub color="#ffffff" />, title: "GitHub" },
-  { icon: <SiVercel color="#ffffff" />, title: "Vercel" },
-  { icon: <SiTailwindcss color="#38BDF8" />, title: "Tailwind CSS" },
+  { icon: <FaHtml5 />, title: "HTML5", color: "#E34F26" },
+  { icon: <FaCss3Alt />, title: "CSS3", color: "#1572B6" },
+  { icon: <FaJsSquare />, title: "JavaScript", color: "#F7DF1E" },
+  { icon: <FaReact />, title: "React", color: "#61DAFB" },
+  { icon: <SiTailwindcss />, title: "Tailwind CSS", color: "#38BDF8" },
+  { icon: <FaNodeJs />, title: "Node.js", color: "#5FA04E" },
+  { icon: <SiExpress />, title: "Express.js", color: "#ffffff" },
+  { icon: <SiMongodb />, title: "MongoDB", color: "#47A248" },
+  { icon: <SiFirebase />, title: "Firebase", color: "#FFCA28" },
+  { icon: <FaGitAlt />, title: "Git", color: "#F05032" },
+  { icon: <FaGithub />, title: "GitHub", color: "#ffffff" },
+  { icon: <SiVercel />, title: "Vercel", color: "#ffffff" },
 ];
 
 function TechStack() {
@@ -36,31 +39,32 @@ function TechStack() {
     <section className="tech" id="skills">
       <div className="container">
 
-        <span className="cantarell-regular ">
-          MY SKILLS
+        <span className="section-tag-tech">
+          MY SKILLS & TOOLS
         </span>
 
-        <h2 className="cantarell-bold">
+        <h2 className="tech-title">
           Technologies I Work With
         </h2>
 
         <div className="tech-grid">
-
           {skills.map((skill, index) => (
-
-            <div className="tech-card" key={index}
-              data-aos="flip-left">
-
-              <div className="tech-icon">
+            <div
+              className="tech-card"
+              key={index}
+              style={{
+                "--brand-color": skill.color,
+              }}
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
+            >
+              <div className="tech-icon" style={{ color: skill.color }}>
                 {skill.icon}
               </div>
 
               <h3>{skill.title}</h3>
-
             </div>
-
           ))}
-
         </div>
 
       </div>
