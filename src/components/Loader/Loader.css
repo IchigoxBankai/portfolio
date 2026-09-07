@@ -1,95 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Freckle+Face&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Spray+Paint&family=Stack+Sans+Text:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Freckle+Face&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Dirt&family=Rubik+Spray+Paint&family=Stack+Sans+Text:wght@200..700&family=Ultra&display=swap');
-.loader{
 
-    position: fixed;
-    inset: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-
-    z-index: 999999;
-
-      background:url("../../assets/images/logo/BG10.png")
-        center/cover no-repeat;
-
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 999999;
+  background: #000;
 }
 
-
-.loader-content{
-
-    position:absolute;
-
-    left:40%;
-
-    top:45%;
-
-    transform:translateY(-50%);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    text-align:center;
-
-    z-index:10;
+.loader-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
-
-
-
-.loader-content h2{
-
-    margin:0;
-
-    font-size:3rem;
-margin-left:25px;
-    letter-spacing:3px;
-    font-weight: 1000;
-
-color:black;
+.loader-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+  z-index: 2;
+  pointer-events: none;
 }
 
-
-.loader-content p{
-
-    margin-top:12px;
-
-    margin-bottom:45px;
-margin-left:120px;
-    color:#0a0909fa;
-font-size:1.3rem;
-    letter-spacing:3px;
-font-weight: 1000;
-
+.loader-content {
+  position: absolute;
+  left: 35%;
+  top: 45%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  z-index: 10;
+  color: black;
 }
 
-
-.loading-bar{
-
-    width:430px;
-
-    height:7px;
-
-    margin-top:10px;
-
-    background:#222;
-
-    overflow:hidden;
+.loader-content h2 {
+  margin: 0;
+  font-size: 3.2rem;
+  margin-left: 30px;
+  letter-spacing: 3px;
+  word-spacing: 16px;
+  font-weight: 1000;
+  color: #dbdbdb;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9), 0 0 25px rgba(227, 6, 19, 0.5);
 }
 
+.loader-content p {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  margin-left: 145px;
+  color: #222121;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
 
-.loading-progress{
+.loading-bar {
+  width: 430px;
+  height: 7px;
+  margin-top: 10px;
+  margin-left: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
 
-    height:100%;
+.loading-progress {
+  height: 90%;
+  background: #E30613;
+  box-shadow: 0 0 12px #E30613;
+}
 
-    background:#E30613;
+/* Sound & Skip Controls */
+.loader-controls {
+  position: absolute;
+  bottom: 28px;
+  right: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+}
 
+.loader-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loader-btn:hover {
+  background: #E30613;
+  border-color: #E30613;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(227, 6, 19, 0.4);
 }
 
 .cantarell-regular {
@@ -103,7 +128,6 @@ font-weight: 1000;
   font-weight: 700;
   font-style: normal;
 }
-
 
 .rubik-dirt-regular {
   font-family: "Rubik Dirt", system-ui;
@@ -122,17 +146,24 @@ font-weight: 1000;
 
   .loader-content h2 {
     margin-left: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .loader-content p {
     margin-left: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
   }
 
   .loading-bar {
-    width: 100%;
-    max-width: 300px;
+    width: 110%;
+    max-width: 320px;
+  }
+
+  .loader-controls {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    justify-content: space-between;
   }
 }
-
