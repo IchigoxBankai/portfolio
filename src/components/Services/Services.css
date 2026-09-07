@@ -60,13 +60,29 @@
 }
 
 /* ===========================
-   GRID (4 Columns Compact)
+   GRID (3 by 2 Layout)
 =========================== */
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+/* Top 3 cards */
+.services-grid .service-card:nth-child(1),
+.services-grid .service-card:nth-child(2),
+.services-grid .service-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* Bottom 2 cards (centered) */
+.services-grid .service-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.services-grid .service-card:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 /* ===========================
@@ -207,14 +223,28 @@
    RESPONSIVE DESIGN
 =========================== */
 
-@media(max-width: 1100px) {
+@media(max-width: 1050px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+
+    .services-grid .service-card:nth-child(1),
+    .services-grid .service-card:nth-child(2),
+    .services-grid .service-card:nth-child(3),
+    .services-grid .service-card:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .services-grid .service-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 650px) {
     .services {
         padding: 70px 0;
     }
@@ -222,6 +252,11 @@
     .services-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .services-grid .service-card:nth-child(5) {
+        grid-column: auto;
+        max-width: 100%;
     }
 
     .service-card {

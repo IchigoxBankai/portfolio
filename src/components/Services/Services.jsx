@@ -5,6 +5,7 @@ import {
   FaMobileAlt,
   FaRocket,
   FaArrowRight,
+  FaDesktop,
 } from "react-icons/fa";
 
 const services = [
@@ -15,16 +16,22 @@ const services = [
     tech: ["React", "JavaScript", "Firebase"],
   },
   {
+    icon: <FaMobileAlt />,
+    title: "App Development",
+    desc: "Building high-performance, interactive mobile and web applications with seamless user experiences.",
+    tech: ["Mobile Apps", "Web Apps", "Cross-Platform", "React"],
+  },
+  {
     icon: <FaPalette />,
     title: "UI / UX Design",
     desc: "Beautiful interfaces focused on user experience, premium aesthetics and intuitive interactions.",
     tech: ["Figma", "Design System", "Motion"],
   },
   {
-    icon: <FaMobileAlt />,
+    icon: <FaDesktop />,
     title: "Responsive Websites",
-    desc: "Pixel-perfect layouts optimized for desktop, tablet and mobile devices.",
-    tech: ["HTML", "CSS", "Responsive"],
+    desc: "Pixel-perfect layouts optimized for desktop, tablet and mobile devices with fast loading.",
+    tech: ["HTML5", "CSS3", "Responsive"],
   },
   {
     icon: <FaRocket />,
