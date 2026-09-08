@@ -1,3 +1,4 @@
+import folderlens from "../assets/images/projects/FolderLens.png";
 import auraTrack from "../assets/images/projects/auratrack.png";
 import stylo from "../assets/images/projects/stylo.png";
 import Monster from "../assets/images/projects/monster.png";
@@ -16,6 +17,17 @@ import brewhaven from "../assets/images/projects/BrewHaven.png";
 const projects = [
   {
     id: 1,
+    title: "FolderLens",
+    category: "Creative File Intelligence",
+    image: folderlens,
+    description:
+      "A creative file intelligence platform for scanning, analyzing, visualizing, and managing media assets with deep directory insights and modern UI.",
+    tech: ["React", "FastAPI", "Python", "Tailwind CSS"],
+    live: "https://folder-lens.vercel.app/",
+    github: "https://github.com/IchigoxBankai",
+  },
+  {
+    id: 2,
     title: "AuraTrack",
     category: "Mental Health Platform",
     image: auraTrack,
@@ -26,7 +38,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 2,
+    id: 3,
     title: "Stylo",
     category: "Luxury Sneaker Website",
     image: stylo,
@@ -37,7 +49,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/luxury-sneaker",
   },
   {
-    id: 3,
+    id: 4,
     title: "Monster",
     category: "Energy Drink Website",
     image: Monster,
@@ -48,7 +60,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 4,
+    id: 5,
     title: "GithubUniverse",
     category: "3D Solar System Visualizer",
     image: githubuniverse,
@@ -58,7 +70,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/GithubUniverse",
   },
   {
-    id: 5,
+    id: 6,
     title: "DevDash",
     category: "Developer Workspace",
     image: devdash,
@@ -68,7 +80,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/devdash",
   },
   {
-    id: 6,
+    id: 7,
     title: "Brew-Haven",
     category: "Artisanal Coffee Showcase",
     image: brewhaven,
@@ -78,7 +90,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/Brew-Haven",
   },
   {
-    id: 7,
+    id: 8,
     title: "ToolSpace",
     category: "Utility & Developer Suite",
     image: toolspace,
@@ -88,7 +100,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/ToolSpace",
   },
   {
-    id: 8,
+    id: 9,
     title: "StudyFlow AI",
     category: "AI Learning Platform",
     image: studyflow,
@@ -99,7 +111,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 9,
+    id: 10,
     title: "PlayVerse",
     category: "Gaming Platform",
     image: playverse,
@@ -109,7 +121,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 10,
+    id: 11,
     title: "Sudo Cafe",
     category: "Cafe & Culinary Web App",
     image: sudocafe,
@@ -119,7 +131,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 11,
+    id: 12,
     title: "UH Properties",
     category: "Real Estate Platform",
     image: uhproperties,
@@ -129,7 +141,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 12,
+    id: 13,
     title: "AI Resume Analyzer",
     category: "AI Career & Resume Tool",
     image: airesumeanalyzer,
@@ -139,7 +151,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 13,
+    id: 14,
     title: "Porsche",
     category: "Automotive Concept",
     image: porsche,
@@ -149,7 +161,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/Porsche",
   },
   {
-    id: 14,
+    id: 15,
     title: "AnimeHub",
     category: "Anime Companion Platform",
     image: animehub,
