@@ -10,6 +10,7 @@ function Loader({ children }) {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      video.playbackRate = 1.25;
       video.muted = false;
       video.volume = 1.0;
       const playPromise = video.play();
@@ -17,6 +18,7 @@ function Loader({ children }) {
         playPromise.catch(() => {
           // If browser policy blocks sound before user gesture, start muted and unmute immediately on first gesture
           if (videoRef.current) {
+            videoRef.current.playbackRate = 1.25;
             videoRef.current.muted = true;
             videoRef.current.play().catch(() => { });
           }
@@ -40,7 +42,7 @@ function Loader({ children }) {
     // Safety fallback timeout
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 7000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer);
@@ -109,7 +111,7 @@ function Loader({ children }) {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{
-                    duration: 4.8,
+                    duration: 3.8,
                     ease: "easeInOut",
                   }}
                 />
