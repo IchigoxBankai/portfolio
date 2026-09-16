@@ -1,4 +1,5 @@
 import folderlens from "../assets/images/projects/FolderLens.png";
+import gamevault from "../assets/images/projects/GameVault.png";
 import auraTrack from "../assets/images/projects/auratrack.png";
 import stylo from "../assets/images/projects/stylo.png";
 import Monster from "../assets/images/projects/monster.png";
@@ -17,6 +18,17 @@ import brewhaven from "../assets/images/projects/BrewHaven.png";
 const projects = [
   {
     id: 1,
+    title: "GameVault",
+    category: "Android Games Showcase & Hub",
+    image: gamevault,
+    description:
+      "A personal collection showcase of Android games and interactive experiments, featuring real-time multiplayer titles, RPG gachas, and instant APK downloads.",
+    tech: ["React", "Flutter", "Firebase", "WebRTC"],
+    live: "https://game-vault-henna-pi.vercel.app/",
+    github: "https://github.com/IchigoxBankai",
+  },
+  {
+    id: 2,
     title: "FolderLens",
     category: "Creative File Intelligence",
     image: folderlens,
@@ -27,7 +39,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 2,
+    id: 3,
     title: "AuraTrack",
     category: "Mental Health Platform",
     image: auraTrack,
@@ -38,7 +50,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 3,
+    id: 4,
     title: "Stylo",
     category: "Luxury Sneaker Website",
     image: stylo,
@@ -49,7 +61,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/luxury-sneaker",
   },
   {
-    id: 4,
+    id: 5,
     title: "Monster",
     category: "Energy Drink Website",
     image: Monster,
@@ -60,47 +72,51 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 5,
+    id: 6,
     title: "GithubUniverse",
     category: "3D Solar System Visualizer",
     image: githubuniverse,
     description:
       "An interactive 3D solar system visualizer that converts any GitHub user profile and repositories into orbiting planets and cosmos.",
+    tech: ["Three.js", "React", "WebGL"],
     live: "https://ichigoxbankai.github.io/GithubUniverse/",
     github: "https://github.com/IchigoxBankai/GithubUniverse",
   },
   {
-    id: 6,
+    id: 7,
     title: "DevDash",
     category: "Developer Workspace",
     image: devdash,
     description:
       "A feature-rich developer workspace dashboard featuring real-time GitHub stats, Pomodoro timers, task lists, weather widgets, and productivity analytics.",
+    tech: ["React", "CSS", "APIs"],
     live: "https://ichigoxbankai.github.io/devdash/",
     github: "https://github.com/IchigoxBankai/devdash",
   },
   {
-    id: 7,
+    id: 8,
     title: "Brew-Haven",
     category: "Artisanal Coffee Showcase",
     image: brewhaven,
     description:
       "A warm, artisanal coffee shop landing page offering handcrafted coffee blends, fresh pastries, interactive digital menu, and online table reservations.",
+    tech: ["React", "CSS", "UI/UX"],
     live: "https://ichigoxbankai.github.io/Brew-Haven/",
     github: "https://github.com/IchigoxBankai/Brew-Haven",
   },
   {
-    id: 8,
+    id: 9,
     title: "ToolSpace",
     category: "Utility & Developer Suite",
     image: toolspace,
     description:
       "A fast, privacy-first utility suite featuring unit converters, live currency calculators, text manipulation tools, QR code generators, and everyday utilities.",
+    tech: ["React", "JavaScript", "CSS"],
     live: "https://ichigoxbankai.github.io/ToolSpace/",
     github: "https://github.com/IchigoxBankai/ToolSpace",
   },
   {
-    id: 9,
+    id: 10,
     title: "StudyFlow AI",
     category: "AI Learning Platform",
     image: studyflow,
@@ -111,62 +127,68 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 10,
+    id: 11,
     title: "PlayVerse",
     category: "Gaming Platform",
     image: playverse,
     description:
       "The ultimate browser mini-games platform featuring interactive gameplay, persistent background music, achievement badges, and competitive score leaderboards.",
+    tech: ["React", "HTML5 Canvas", "Audio API"],
     live: "https://playverse-eta.vercel.app/",
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 11,
+    id: 12,
     title: "Sudo Cafe",
     category: "Cafe & Culinary Web App",
     image: sudocafe,
     description:
       "A modern cafe website for Sudo Cafe (Kurla, Mumbai) featuring artisanal coffee, gourmet burgers, pizzas, digital menu browsing, and aesthetic culinary vibes.",
+    tech: ["React", "CSS", "UI/UX"],
     live: "https://sudo-cafe.vercel.app/",
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 12,
+    id: 13,
     title: "UH Properties",
     category: "Real Estate Platform",
     image: uhproperties,
     description:
       "A premier real estate listing and property search platform featuring modern luxury homes, interactive filtering, detailed property tours, and inquiries.",
+    tech: ["React", "Tailwind CSS", "Vite"],
     live: "https://uhproperties.vercel.app/properties",
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 13,
+    id: 14,
     title: "AI Resume Analyzer",
     category: "AI Career & Resume Tool",
     image: airesumeanalyzer,
     description:
       "An intelligent AI tool that parses candidate resumes, provides ATS compatibility scores, extracts key skills, and gives personalized career feedback.",
+    tech: ["Python", "Streamlit", "Gemini AI"],
     live: "https://ai-resume-analyzer-8.jukjgfthwhd8zinjcwbn8.streamlit.app/",
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 14,
+    id: 15,
     title: "Porsche",
     category: "Automotive Concept",
     image: porsche,
     description:
       "An immersive luxury automotive showcase for Porsche E-Performance, featuring hypercars, interactive GSAP animations, sound engine synthesis, and model customizers.",
+    tech: ["React", "GSAP", "Three.js"],
     live: "https://ichigoxbankai.github.io/Porsche/",
     github: "https://github.com/IchigoxBankai/Porsche",
   },
   {
-    id: 15,
+    id: 16,
     title: "AnimeHub",
     category: "Anime Companion Platform",
     image: animehub,
     description:
       "A modern, immersive anime discovery platform and companion app with sleek UI animations, search features, trending shows, and interactive cataloging.",
+    tech: ["React", "Jikan API", "CSS"],
     live: "https://ichigoxbankai.github.io/AnimeHub/",
     github: "https://github.com/IchigoxBankai/AnimeHub",
   },
