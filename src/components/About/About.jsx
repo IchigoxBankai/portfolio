@@ -18,20 +18,10 @@ const skills = [
 
 function About() {
   return (
-    <section className="about" id="about"style={{ backgroundImage: `url(${bgImg})` }}>
+    <section className="about" id="about" style={{ backgroundImage: `url(${bgImg})` }}>
       <div className="container about-container">
 
-        {/* LEFT */}
-
-        <div className="about-image">
-
-          <div className="image-glow"></div>
-
-          
-
-        </div>
-
-        {/* RIGHT */}
+        <div className="about-spacer"></div>
 
         <div className="about-content">
 
@@ -53,11 +43,8 @@ function About() {
           </p>
 
           {/* Skills */}
-
           <div className="skill-pills">
-
             {skills.map((skill, index) => (
-
               <div
                 className="skill-pill"
                 key={index}
@@ -65,17 +52,11 @@ function About() {
                 {skill.icon}
                 <span>{skill.text}</span>
               </div>
-
             ))}
-
           </div>
 
-          
-
           {/* Buttons */}
-
           <div className="about-buttons">
-
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
               download="Nihar_Puthran_Resume.pdf"
@@ -94,19 +75,14 @@ function About() {
               Let's Connect
               <FaArrowRight />
             </a>
-
           </div>
 
           {/* Quote */}
-
           <div className="about-quote">
-
             <p>
               "Every project is another step towards my Bankai."
             </p>
-
             <span>— Nihar Puthran</span>
-
           </div>
 
         </div>

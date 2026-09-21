@@ -91,32 +91,38 @@ function Loader({ children }) {
 
             <div className="loader-overlay" />
 
-            <motion.div
-              className="loader-content"
-              initial={{
-                scale: 0.9,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-              }}
-            >
-              <h2 className="rubik-dirt-regular">Nihar   Puthran</h2>
-              <p>Web Developer</p>
+            <div className="loader-wrapper">
+              <motion.div
+                className="loader-content"
+                initial={{
+                  scale: 0.9,
+                  opacity: 0,
+                }}
+                animate={{
+                  scale: 1,
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+              >
+                <h2 className="rubik-dirt-regular">Nihar   Puthran</h2>
+                <p>Frontend Developer</p>
 
-              <div className="loading-bar">
-                <motion.div
-                  className="loading-progress"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{
-                    duration: 3.8,
-                    ease: "easeInOut",
-                  }}
-                />
-              </div>
-            </motion.div>
+                <div className="loading-bar">
+                  <motion.div
+                    className="loading-progress"
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{
+                      duration: 3.8,
+                      ease: "easeInOut",
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
 
             <div className="loader-controls">
               <button

@@ -168,26 +168,42 @@
 @media(max-width: 1024px) {
     .tech-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 18px;
     }
 }
 
 @media(max-width: 640px) {
     .tech {
-        padding: 80px 0;
+        padding: 70px 0;
+    }
+
+    .section-tag-tech {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
     }
 
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
+        gap: 12px;
     }
 
     .tech-card {
-        padding: 22px 14px;
+        padding: 20px 12px;
+        border-radius: 16px;
+        gap: 10px;
+    }
+
+    .tech-icon {
+        font-size: 2.2rem;
+    }
+
+    .tech-card h3 {
+        font-size: 0.88rem;
     }
 
     .tech-title {
-        font-size: 2.1rem;
-        margin-bottom: 40px;
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+        margin-bottom: 35px;
     }
 }

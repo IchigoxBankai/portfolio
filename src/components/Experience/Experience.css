@@ -378,70 +378,111 @@
 =========================== */
 
 @media(max-width:900px){
+    .experience {
+        padding: 80px 0;
+    }
 
-.timeline::before{
+    .experience-heading {
+        margin-bottom: 50px;
+    }
 
-left:18px;
+    .experience-heading h2{
+        font-size: clamp(2.2rem, 7vw, 3.2rem);
+    }
 
-}
+    .timeline::before{
+        left:16px;
+        width: 3px;
+    }
 
-.timeline-item{
+    .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:48px;
+        padding-right:0;
+        margin-bottom: 50px;
+    }
 
-width:100%;
+    .timeline-dot{
+        left:6px !important;
+        width: 20px;
+        height: 20px;
+        top: 35px;
+    }
 
-left:0 !important;
+    .timeline-card{
+        padding: 30px 24px;
+        border-radius: 22px;
+    }
 
-padding-left:60px;
-
-padding-right:0;
-
-}
-
-.timeline-dot{
-
-left:8px !important;
-
-}
-
-.timeline-card{
-
-margin-top:15px;
-
-}
-
-.experience-heading h2{
-
-font-size:3rem;
-
-}
-
-.year-bg{
-
-font-size:80px;
-
-}
-
+    .year-bg{
+        font-size:70px;
+        right: 15px;
+        top: -10px;
+    }
 }
 
 @media(max-width:480px){
+    .experience {
+        padding: 60px 0;
+    }
+
+    .experience-heading span {
+        font-size: 0.9rem;
+    }
+
     .experience-heading h2{
-        font-size:2.2rem;
+        font-size: 2rem;
+        margin: 10px 0;
     }
-    .timeline-card{
-        padding:25px;
+
+    .experience-heading p {
+        font-size: 0.92rem;
     }
-    .timeline-card h3{
-        font-size:1.5rem;
-    }
+
     .timeline-item{
-        padding-left:40px;
+        padding-left:36px;
+        margin-bottom: 35px;
     }
+
     .timeline::before{
         left: 10px;
     }
+
     .timeline-dot{
-        left: -1px !important;
-        width: 16px;
-        height: 16px;
+        left: 1px !important;
+        width: 18px;
+        height: 18px;
+        border-width: 4px;
+        top: 25px;
+    }
+
+    .timeline-card{
+        padding:20px 16px;
+        border-radius: 18px;
+    }
+
+    .timeline-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        border-radius: 14px;
+        margin-bottom: 16px;
+    }
+
+    .timeline-card h3{
+        font-size:1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .timeline-card p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    .tech-badge {
+        padding: 6px 12px;
+        font-size: 0.78rem;
     }
 }

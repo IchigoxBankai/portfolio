@@ -336,30 +336,51 @@
 @media(max-width:768px){
     .hero{
         padding-top: 100px;
+        padding-bottom: 50px;
+        min-height: auto;
     }
     .hero-title, .hero-titlee {
-        font-size: clamp(2.5rem, 8vw, 3.5rem);
-        letter-spacing: -2px;
+        font-size: clamp(2.4rem, 9vw, 3.4rem);
+        letter-spacing: -1.5px;
+        margin-bottom: 6px;
     }
     .hero-role {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+        font-size: 1.15rem;
+        margin-bottom: 18px;
     }
     .hero-text {
         font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 28px;
+        padding: 0 5px;
     }
     .hero-image {
         width: 100%;
-        max-width: 320px;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+    .hero-image img {
+        height: 330px;
     }
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
         width: 100%;
+        max-width: 340px;
+        margin: 0 auto 35px;
     }
     .hero-btn {
-        width: 100%;
+        flex: 1 1 140px;
+        padding: 13px 20px;
+        font-size: 0.9rem;
     }
     .hero-container {
-        gap: 50px;
+        gap: 40px;
+    }
+    .hero-stack {
+        gap: 18px;
+        font-size: 1.7rem;
     }
 }
