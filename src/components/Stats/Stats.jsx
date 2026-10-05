@@ -19,7 +19,7 @@ const stats = [
   },
   {
     icon: <FaLaptopCode />,
-    number: "9.50",
+    number: "9.52",
     title: "Current CGPA",
   },
   {

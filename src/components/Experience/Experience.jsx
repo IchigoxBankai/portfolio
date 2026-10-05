@@ -25,7 +25,7 @@ const journey = [
     year: "2025",
     icon: <FaAward />,
     title: "Academic Excellence",
-    desc: "Achieved a 9.60 CGPA while developing multiple real-world projects and improving UI/UX skills.",
+    desc: "Achieved a 9.52 CGPA while developing multiple real-world projects and improving UI/UX skills.",
     tech: ["Leadership", "Projects", "UI/UX"],
   },
   {
@@ -63,9 +63,8 @@ function Experience() {
 
             <div
               key={index}
-              className={`timeline-item ${
-                index % 2 === 0 ? "left" : "right"
-              }`}
+              className={`timeline-item ${index % 2 === 0 ? "left" : "right"
+                }`}
               data-aos={
                 index % 2 === 0
                   ? "fade-right"

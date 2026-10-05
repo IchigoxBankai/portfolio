@@ -1,6 +1,6 @@
 import "./Contact.css";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 import {
   FaGithub,
@@ -34,11 +34,6 @@ function Contact() {
           <div className="contact-item">
             <Mail size={22} />
             <span>niharputhran03@gmail.com</span>
-          </div>
-
-          <div className="contact-item">
-            <Phone size={22} />
-            <span>+91 85915 75101</span>
           </div>
 
           <div className="contact-item">
