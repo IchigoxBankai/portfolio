@@ -1,3 +1,4 @@
+import brewbite from "../assets/images/projects/BrewBite.png";
 import watchmate from "../assets/images/projects/WatchMate.png";
 import folderlens from "../assets/images/projects/FolderLens.png";
 import gamevault from "../assets/images/projects/GameVault.png";
@@ -15,11 +16,21 @@ import sudocafe from "../assets/images/projects/Sudo cafe.png";
 import uhproperties from "../assets/images/projects/UH Properties.png";
 import airesumeanalyzer from "../assets/images/projects/Ai Resume Analyzer.png";
 import porsche from "../assets/images/projects/Porsche.png";
-import brewhaven from "../assets/images/projects/BrewHaven.png";
 
 const projects = [
   {
     id: 1,
+    title: "BrewBite Café",
+    category: "Digital Café & Tabletop Ordering System",
+    image: brewbite,
+    description:
+      "A modern digital ordering and café management platform featuring interactive menu browsing, tabletop ordering, dynamic UPI payments, table reservations, and live order tracking.",
+    tech: ["React", "Tailwind CSS", "Vite", "UI/UX"],
+    live: "https://brewbite-cafe.vercel.app/",
+    github: "https://github.com/IchigoxBankai",
+  },
+  {
+    id: 2,
     title: "WatchMate",
     category: "Real-Time Co-Watching Platform",
     image: watchmate,
@@ -30,7 +41,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 2,
+    id: 3,
     title: "GameVault",
     category: "Android Games Showcase & Hub",
     image: gamevault,
@@ -41,7 +52,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 3,
+    id: 4,
     title: "GithubUniverse",
     category: "3D Solar System Visualizer",
     image: githubuniverse,
@@ -52,7 +63,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/GithubUniverse",
   },
   {
-    id: 4,
+    id: 5,
     title: "FolderLens",
     category: "Creative File Intelligence",
     image: folderlens,
@@ -63,7 +74,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 5,
+    id: 6,
     title: "AuraTrack",
     category: "Mental Health Platform",
     image: auraTrack,
@@ -74,7 +85,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 6,
+    id: 7,
     title: "ToolSpace",
     category: "Utility & Developer Suite",
     image: toolspace,
@@ -85,7 +96,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/ToolSpace",
   },
   {
-    id: 7,
+    id: 8,
     title: "Monster",
     category: "Energy Drink Website",
     image: Monster,
@@ -96,7 +107,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 8,
+    id: 9,
     title: "AppVault",
     category: "Android App Showcase & Hub",
     image: appvault,
@@ -107,7 +118,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/app-vault",
   },
   {
-    id: 9,
+    id: 10,
     title: "DevDash",
     category: "Developer Workspace",
     image: devdash,
@@ -116,17 +127,6 @@ const projects = [
     tech: ["React", "CSS", "APIs"],
     live: "https://ichigoxbankai.github.io/devdash/",
     github: "https://github.com/IchigoxBankai/devdash",
-  },
-  {
-    id: 10,
-    title: "Brew-Haven",
-    category: "Artisanal Coffee Showcase",
-    image: brewhaven,
-    description:
-      "A warm, artisanal coffee shop landing page offering handcrafted coffee blends, fresh pastries, interactive digital menu, and online table reservations.",
-    tech: ["React", "CSS", "UI/UX"],
-    live: "https://ichigoxbankai.github.io/Brew-Haven/",
-    github: "https://github.com/IchigoxBankai/Brew-Haven",
   },
   {
     id: 11,
