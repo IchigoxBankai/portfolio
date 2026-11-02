@@ -1,15 +1,9 @@
 .services {
     position: relative;
-    padding: 100px 0;
+    padding: 110px 0;
     overflow: hidden;
-    background:
-        radial-gradient(circle at top left,
-            rgba(138, 134, 134, 0.911),
-            transparent 40%),
-        radial-gradient(circle at bottom right,
-            rgb(121, 119, 119),
-            transparent 45%),
-        #f5f6f8;
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Background Glow */

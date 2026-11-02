@@ -1,74 +1,80 @@
 import "./Footer.css";
-
 import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
   FaArrowUp,
+  FaEnvelope,
 } from "react-icons/fa";
 
 function Footer() {
-
   const scrollTop = () => {
     window.scrollTo({
-      top:0,
-      behavior:"smooth",
+      top: 0,
+      behavior: "smooth",
     });
   };
 
   return (
     <footer className="footer">
-
       <div className="container">
-
-        <h2>Nihar Puthran.</h2>
+        <h2>
+          Nihar Puthran<span style={{ color: "#E50914" }}>.</span>
+        </h2>
 
         <p>
-          Building modern websites with creativity,
-          performance and clean user experiences.
+          Building modern, high-performance web applications with clean code,
+          creative UI interactions, and thoughtful user experiences.
         </p>
 
         <div className="footer-socials">
-
           <a
             href="https://github.com/IchigoxBankai"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
+            aria-label="GitHub Profile"
           >
             <FaGithub />
           </a>
 
           <a
-            href="https://linkedin.com/in/YOUR-LINKEDIN"
+            href="https://www.linkedin.com/in/nihar-puthran-336029372/"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
+            aria-label="LinkedIn Profile"
           >
             <FaLinkedin />
           </a>
 
           <a
-            href="https://instagram.com/YOURUSERNAME"
+            href="https://www.instagram.com/pain__x9?igsh=ZXdrZWxidzByNnY2"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
+            aria-label="Instagram Profile"
           >
             <FaInstagram />
           </a>
 
+          <a
+            href="mailto:niharputhran03@gmail.com"
+            aria-label="Send Email"
+          >
+            <FaEnvelope />
+          </a>
         </div>
 
         <button
           className="top-btn"
           onClick={scrollTop}
+          aria-label="Back to Top"
         >
           <FaArrowUp />
         </button>
 
         <div className="copyright">
-          © {new Date().getFullYear()} Nihar Puthran. All Rights Reserved.
+          © {new Date().getFullYear()} Nihar Puthran. Crafted with passion &amp; Bankai spirit.
         </div>
-
       </div>
-
     </footer>
   );
 }
