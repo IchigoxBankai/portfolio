@@ -1,11 +1,49 @@
 import "./Stats.css";
-import CountUp from "react-countup";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import {
   FaLaptopCode,
   FaProjectDiagram,
   FaAward,
   FaCode,
 } from "react-icons/fa";
+
+function AnimatedCounter({ value, decimals = 0, duration = 1.8 }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const start = 0;
+    const end = parseFloat(value);
+    const totalFrames = Math.round(duration * 60);
+    let frame = 0;
+
+    const timer = setInterval(() => {
+      frame++;
+      // easeOutExpo curve
+      const progress = frame >= totalFrames ? 1 : 1 - Math.pow(2, -10 * (frame / totalFrames));
+      const current = start + (end - start) * progress;
+
+      if (frame >= totalFrames) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(current);
+      }
+    }, 1000 / 60);
+
+    return () => clearInterval(timer);
+  }, [isInView, value, duration]);
+
+  return (
+    <span ref={ref}>
+      {count.toFixed(decimals)}
+    </span>
+  );
+}
 
 const stats = [
   {
@@ -60,12 +98,9 @@ function Stats() {
               </div>
 
               <h2 className="stat-number">
-                <CountUp
-                  end={item.value}
+                <AnimatedCounter
+                  value={item.value}
                   decimals={item.decimals}
-                  duration={2.2}
-                  enableScrollSpy
-                  scrollSpyOnce
                 />
                 {item.suffix}
               </h2>
