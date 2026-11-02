@@ -14,8 +14,8 @@ import githubuniverse from "../assets/images/projects/GitHubUniverse.png";
 import playverse from "../assets/images/projects/Playverse.png";
 import sudocafe from "../assets/images/projects/Sudo cafe.png";
 import uhproperties from "../assets/images/projects/UH Properties.png";
-import airesumeanalyzer from "../assets/images/projects/Ai Resume Analyzer.png";
-import porsche from "../assets/images/projects/Porsche.png";
+import minimartAi from "../assets/images/projects/MiniMartAI.png";
+import clientflow from "../assets/images/projects/ClientFlow.png";
 
 const projects = [
   {
@@ -185,25 +185,25 @@ const projects = [
   },
   {
     id: 16,
-    title: "AI Resume Analyzer",
-    category: "AI Career & Resume Tool",
-    image: airesumeanalyzer,
+    title: "MiniMart AI",
+    category: "AI Retail Store Management OS",
+    image: minimartAi,
     description:
-      "An intelligent AI tool that parses candidate resumes, provides ATS compatibility scores, extracts key skills, and gives personalized career feedback.",
-    tech: ["Python", "Streamlit", "Gemini AI"],
-    live: "https://ai-resume-analyzer-8.jukjgfthwhd8zinjcwbn8.streamlit.app/",
-    github: "https://github.com/IchigoxBankai",
+      "An intelligent retail operating system and digital store manager featuring AI co-pilot reasoning, POS checkout with barcode scanner, inventory & expiry tracking, multi-store switching, and thermal receipt generation.",
+    tech: ["React", "Tailwind CSS", "Recharts", "AI"],
+    live: "https://ichigoxbankai.github.io/minimart-ai/",
+    github: "https://github.com/IchigoxBankai/minimart-ai",
   },
   {
     id: 17,
-    title: "Porsche",
-    category: "Automotive Concept",
-    image: porsche,
+    title: "ClientFlow",
+    category: "AI Freelance Business OS",
+    image: clientflow,
     description:
-      "An immersive luxury automotive showcase for Porsche E-Performance, featuring hypercars, interactive GSAP animations, sound engine synthesis, and model customizers.",
-    tech: ["React", "GSAP", "Three.js"],
-    live: "https://ichigoxbankai.github.io/Porsche/",
-    github: "https://github.com/IchigoxBankai/Porsche",
+      "An AI-powered workspace for freelancers and creative studios featuring autonomous agent execution, client brief-to-project synthesis, milestone timelines, and smart invoicing.",
+    tech: ["React", "Tailwind CSS", "Vite", "AI"],
+    live: "https://ichigoxbankai.github.io/client-flow/",
+    github: "https://github.com/IchigoxBankai/client-flow",
   },
   {
     id: 18,

@@ -39,10 +39,10 @@ function Loader({ children }) {
     window.addEventListener("touchstart", unmute, { passive: true });
     window.addEventListener("keydown", unmute, { passive: true });
 
-    // Safety fallback timeout
+    // Auto dismiss splash screen after 2 seconds
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
@@ -75,7 +75,7 @@ function Loader({ children }) {
             exit={{
               opacity: 0,
               transition: {
-                duration: 0.8,
+                duration: 0.5,
               },
             }}
           >
@@ -116,7 +116,7 @@ function Loader({ children }) {
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
                     transition={{
-                      duration: 3.8,
+                      duration: 2.0,
                       ease: "easeInOut",
                     }}
                   />
