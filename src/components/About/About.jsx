@@ -1,5 +1,5 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import bgImg from "../../assets/images/about/bg1.png";
 import {
   FaReact,
   FaJs,
@@ -7,11 +7,9 @@ import {
   FaBolt,
   FaArrowRight,
   FaDownload,
-  FaGraduationCap,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
-import { SiFirebase, SiTailwindcss } from "react-icons/si";
-import { CheckCircle2, Sparkles } from "lucide-react";
+import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { CheckCircle2, Copy, Check, Terminal } from "lucide-react";
 import "./About.css";
 
 const skills = [
@@ -29,14 +27,34 @@ const pillars = [
   "High-Performance & Responsive UI",
 ];
 
+const rawCodeString = `const nihar: Developer = {
+  name: "Nihar Puthran",
+  role: "Frontend Developer & UI Designer",
+  location: "Mumbai, India",
+  education: {
+    field: "Computer Science",
+    cgpa: 9.52, // Academic Excellence
+  },
+  mindset: "Every project is another step towards my Bankai.",
+  status: "Available for high-impact work",
+};`;
+
 function About() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(rawCodeString);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section className="about" id="about">
       {/* Subtle crimson ambient glow */}
       <div className="about-ambient-glow" />
 
       <div className="container about-container">
-        {/* ================= LEFT: VISUAL CENTERPIECE ================= */}
+        {/* ================= LEFT: DEVELOPER CODE CARD ================= */}
         <motion.div
           className="about-visual-column"
           initial={{ opacity: 0, x: -30 }}
@@ -44,74 +62,151 @@ function About() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="about-artwork-card">
-            {/* The dramatic red & black ink splash artwork */}
-            <div
-              className="about-artwork-bg"
-              style={{ backgroundImage: `url(${bgImg})` }}
-              role="img"
-              aria-label="Artistic red and black splash artwork"
-            />
-            <div className="about-artwork-overlay" />
+          <div className="dev-code-card">
+            {/* macOS Window Titlebar */}
+            <div className="code-card-header">
+              <div className="traffic-lights">
+                <span className="dot dot-red" />
+                <span className="dot dot-yellow" />
+                <span className="dot dot-green" />
+              </div>
 
-            {/* Floating Info Chip 1: Top-Right (Education) */}
-            <motion.div
-              className="about-floating-chip chip-education"
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                duration: 4.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="chip-icon-box icon-gold">
-                <FaGraduationCap />
+              <div className="code-card-tab">
+                <SiTypescript className="tab-ts-icon" />
+                <span>nihar.bio.ts</span>
               </div>
-              <div className="chip-text-group">
-                <span className="chip-sub">Academic Score</span>
-                <span className="chip-main">9.52 CGPA</span>
-              </div>
-            </motion.div>
 
-            {/* Floating Info Chip 2: Bottom-Left (Location) */}
-            <motion.div
-              className="about-floating-chip chip-location"
-              animate={{ y: [0, -7, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-            >
-              <div className="chip-icon-box icon-red">
-                <FaMapMarkerAlt />
-              </div>
-              <div className="chip-text-group">
-                <span className="chip-sub">Location</span>
-                <span className="chip-main">Mumbai, India</span>
-              </div>
-            </motion.div>
+              <button
+                type="button"
+                className="code-copy-btn"
+                onClick={handleCopyCode}
+                title="Copy snippet"
+                aria-label="Copy developer code snippet"
+              >
+                {copied ? <Check size={14} className="copy-check" /> : <Copy size={14} />}
+                <span className="copy-text">{copied ? "Copied" : "Copy"}</span>
+              </button>
+            </div>
 
-            {/* Floating Info Chip 3: Experience */}
-            <motion.div
-              className="about-floating-chip chip-experience"
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                duration: 4.2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-            >
-              <div className="chip-icon-box icon-sparkle">
-                <Sparkles size={14} />
+            {/* Code Body with Realistic Syntax Highlighting */}
+            <div className="code-editor-body">
+              <pre className="code-content">
+                <code>
+                  <div className="code-line">
+                    <span className="line-num">01</span>
+                    <span className="token-keyword">const </span>
+                    <span className="token-variable">nihar</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-type">Developer </span>
+                    <span className="token-punct">= </span>
+                    <span className="token-punct">&#123;</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">02</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">name</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string">"Nihar Puthran"</span>
+                    <span className="token-punct">,</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">03</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">role</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string">"Frontend Developer &amp; UI Designer"</span>
+                    <span className="token-punct">,</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">04</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">location</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string">"Mumbai, India 🇮🇳"</span>
+                    <span className="token-punct">,</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">05</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">education</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-punct">&#123;</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">06</span>
+                    <span className="token-indent">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span className="token-key">field</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string">"Computer Science"</span>
+                    <span className="token-punct">,</span>
+                  </div>
+
+                  <div className="code-line highlight-line">
+                    <span className="line-num">07</span>
+                    <span className="token-indent">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span className="token-key">cgpa</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-number">9.52</span>
+                    <span className="token-punct">, </span>
+                    <span className="token-comment">// Academic Score</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">08</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-punct">&#125;,</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">09</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">experience</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string">"3+ Years Modern Web"</span>
+                    <span className="token-punct">,</span>
+                  </div>
+
+                  <div className="code-line highlight-bankai">
+                    <span className="line-num">10</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">mindset</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string token-bankai">"Towards my Bankai ⚔️"</span>
+                    <span className="token-punct">,</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">11</span>
+                    <span className="token-indent">&nbsp;&nbsp;</span>
+                    <span className="token-key">status</span>
+                    <span className="token-punct">: </span>
+                    <span className="token-string token-status">"Available for Work"</span>
+                  </div>
+
+                  <div className="code-line">
+                    <span className="line-num">12</span>
+                    <span className="token-punct">&#125;;</span>
+                  </div>
+                </code>
+              </pre>
+            </div>
+
+            {/* Code Card Status Bar */}
+            <div className="code-card-statusbar">
+              <div className="status-item">
+                <Terminal size={13} className="status-terminal-icon" />
+                <span>TypeScript 5.4</span>
               </div>
-              <div className="chip-text-group">
-                <span className="chip-sub">Experience</span>
-                <span className="chip-main">3+ Years</span>
+              <div className="status-item status-live">
+                <span className="status-dot-pulse" />
+                <span>Ready to Build</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Signature Quote Callout */}
@@ -173,7 +268,7 @@ function About() {
             </div>
           </div>
 
-          {/* Buttons */}
+          {/* Action Buttons */}
           <div className="about-actions">
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}

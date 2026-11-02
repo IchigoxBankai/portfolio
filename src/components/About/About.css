@@ -17,10 +17,10 @@
   width: 650px;
   height: 650px;
   top: 15%;
-  left: -10%;
+  left: -8%;
   background: radial-gradient(
     circle,
-    rgba(229, 9, 20, 0.055) 0%,
+    rgba(229, 9, 20, 0.06) 0%,
     rgba(229, 9, 20, 0.01) 50%,
     transparent 70%
   );
@@ -35,143 +35,204 @@
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   align-items: center;
-  gap: 70px;
+  gap: 65px;
   width: min(92%, 1240px);
   margin: 0 auto;
 }
 
-/* ================= LEFT COLUMN: VISUAL ARTWORK & CHIPS ================= */
+/* ================= LEFT COLUMN: DEVELOPER CODE CARD ================= */
 .about-visual-column {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 
-/* Framed Artwork Card */
-.about-artwork-card {
+/* macOS-Inspired Developer Code Editor Card */
+.dev-code-card {
   position: relative;
-  width: 100%;
-  height: 380px;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #111216;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 
-    0 25px 60px -15px rgba(0, 0, 0, 0.1),
-    0 0 35px rgba(229, 9, 20, 0.06);
+    0 25px 60px -15px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(229, 9, 20, 0.08);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-.about-artwork-bg {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.dev-code-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 30px 70px -15px rgba(0, 0, 0, 0.3),
+    0 0 45px rgba(229, 9, 20, 0.12);
 }
 
-.about-artwork-card:hover .about-artwork-bg {
-  transform: scale(1.04);
+/* Titlebar */
+.code-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #181920;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.about-artwork-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 0, 0, 0.12) 100%
-  );
-  pointer-events: none;
+.traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
-/* ----------------- FLOATING INFO CHIPS ----------------- */
-.about-floating-chip {
-  position: absolute;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.code-card-tab {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 16px;
-  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12);
-  z-index: 2;
-  pointer-events: none;
+  gap: 7px;
+  padding: 5px 14px;
+  background: #111216;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  letter-spacing: 0.3px;
 }
 
-.chip-icon-box {
+.tab-ts-icon {
+  color: #3178C6;
+  font-size: 0.88rem;
+}
+
+/* Copy Snippet Button */
+.code-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.code-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.copy-check {
+  color: #10B981;
+}
+
+/* Code Editor Content */
+.code-editor-body {
+  padding: 20px 22px 18px;
+  overflow-x: auto;
+}
+
+.code-content {
+  margin: 0;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: #CBD5E1;
+}
+
+.code-line {
+  display: flex;
+  align-items: baseline;
+  white-space: pre;
+}
+
+.line-num {
+  width: 28px;
+  color: #475569;
+  font-size: 0.74rem;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Syntax Tokens */
+.token-keyword { color: #F43F5E; font-weight: 600; }
+.token-variable { color: #38BDF8; font-weight: 600; }
+.token-type { color: #FBBF24; }
+.token-punct { color: #94A3B8; }
+.token-key { color: #E2E8F0; }
+.token-string { color: #34D399; }
+.token-number { color: #FB923C; font-weight: 700; }
+.token-comment { color: #64748B; font-style: italic; }
+.token-bankai { color: #E50914; font-weight: 700; }
+.token-status { color: #10B981; font-weight: 600; }
+
+.highlight-line {
+  background: rgba(234, 179, 8, 0.07);
+  border-radius: 4px;
+}
+
+.highlight-bankai {
+  background: rgba(229, 9, 20, 0.08);
+  border-radius: 4px;
+}
+
+/* Status Bar */
+.code-card-statusbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  justify-content: space-between;
+  padding: 8px 18px;
+  background: #181920;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #94A3B8;
 }
 
-.icon-gold {
-  background: rgba(234, 179, 8, 0.15);
-  color: #ca8a04;
-}
-
-.icon-red {
-  background: rgba(229, 9, 20, 0.12);
-  color: #E50914;
-}
-
-.icon-sparkle {
-  background: rgba(168, 85, 247, 0.14);
-  color: #9333ea;
-}
-
-.chip-text-group {
+.status-item {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
-.chip-sub {
-  font-size: 0.68rem;
+.status-terminal-icon {
+  color: #38BDF8;
+}
+
+.status-live {
+  color: #10B981;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #777777;
-  text-transform: uppercase;
 }
 
-.chip-main {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #111111;
-}
-
-/* Chip Positions */
-.chip-education {
-  top: 24px;
-  right: 20px;
-}
-
-.chip-location {
-  bottom: 24px;
-  left: 20px;
-}
-
-.chip-experience {
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
+.status-dot-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
 }
 
 /* ----------------- SIGNATURE QUOTE BOX ----------------- */
 .about-quote-box {
   position: relative;
-  padding: 22px 26px 22px 30px;
+  padding: 20px 26px 20px 28px;
   background: #FFFFFF;
   border-radius: 18px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-left: 4px solid #E50914;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
 }
 
 .quote-mark {
@@ -188,7 +249,7 @@
 .quote-text {
   font-style: italic;
   color: #222222;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   font-weight: 600;
   line-height: 1.6;
   margin: 0 0 6px 0;
@@ -402,7 +463,7 @@
   }
 
   .about-visual-column {
-    max-width: 580px;
+    max-width: 600px;
     margin: 0 auto;
     width: 100%;
   }
@@ -441,33 +502,18 @@
     padding: 75px 0 85px;
   }
 
-  .about-artwork-card {
-    height: 300px;
-    border-radius: 20px;
+  .code-editor-body {
+    padding: 14px 12px 12px;
   }
 
-  .chip-education {
-    top: 14px;
-    right: 12px;
-    padding: 7px 12px;
+  .code-content {
+    font-size: 0.74rem;
+    line-height: 1.55;
   }
 
-  .chip-location {
-    bottom: 14px;
-    left: 12px;
-    padding: 7px 12px;
-  }
-
-  .chip-experience {
-    display: none; /* Hide middle chip on small screens to avoid clutter */
-  }
-
-  .about-floating-chip .chip-main {
-    font-size: 0.78rem;
-  }
-
-  .about-floating-chip .chip-sub {
-    font-size: 0.62rem;
+  .line-num {
+    width: 22px;
+    font-size: 0.68rem;
   }
 
   .about-content-column {
@@ -510,10 +556,10 @@
   }
 
   .about-quote-box {
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
 
   .quote-text {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 }
