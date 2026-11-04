@@ -38,25 +38,25 @@
 
 /* Left Eye Socket (Viewer Left):
    In 1024x1024 image:
-   x: 360px (35.16%), width: 115px (11.23%)
+   x: 350px (34.18%), width: 125px (12.21%)
    y: 490px (47.85%), height: 115px (11.23%)
 */
 .eye-socket-left {
   top: 47.85%;
-  left: 35.16%;
-  width: 11.23%;
+  left: 34.18%;
+  width: 12.21%;
   height: 11.23%;
 }
 
 /* Right Eye Socket (Viewer Right):
    In 1024x1024 image:
-   x: 565px (55.18%), width: 120px (11.72%)
+   x: 565px (55.18%), width: 125px (12.21%)
    y: 490px (47.85%), height: 115px (11.23%)
 */
 .eye-socket-right {
   top: 47.85%;
   left: 55.18%;
-  width: 11.72%;
+  width: 12.21%;
   height: 11.23%;
 }
 
@@ -69,25 +69,25 @@
 }
 
 /* Left Iris inside socket:
-   Resting pos: left = 33.91%, top = 22.61%
-   Size: 45.22% wide, 53.91% high
+   Resting pos: left = 4.0%, top = 26.09%
+   Size: 48.0% wide, 52.17% high
 */
 .pupil-left {
-  top: 22.61%;
-  left: 33.91%;
-  width: 45.22%;
-  height: 53.91%;
+  top: 26.09%;
+  left: 4%;
+  width: 48%;
+  height: 52.17%;
 }
 
 /* Right Iris inside socket:
-   Resting pos: left = 28.33%, top = 15.65%
-   Size: 43.33% wide, 53.91% high
+   Resting pos: left = 4.0%, top = 26.09%
+   Size: 48.0% wide, 52.17% high
 */
 .pupil-right {
-  top: 15.65%;
-  left: 28.33%;
-  width: 43.33%;
-  height: 53.91%;
+  top: 26.09%;
+  left: 4%;
+  width: 48%;
+  height: 52.17%;
 }
 
 /* Blinking Animation Eyelids */
@@ -105,8 +105,8 @@
 
 .eyelid-left {
   top: 47.85%;
-  left: 35.16%;
-  width: 11.23%;
+  left: 34.18%;
+  width: 12.21%;
   height: 11.23%;
   border-radius: 50% 50% 30% 30%;
 }
@@ -114,7 +114,7 @@
 .eyelid-right {
   top: 47.85%;
   left: 55.18%;
-  width: 11.72%;
+  width: 12.21%;
   height: 11.23%;
   border-radius: 50% 50% 30% 30%;
 }
