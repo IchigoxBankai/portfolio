@@ -11,7 +11,7 @@
   background: #FFFFFF;
 }
 
-/* Base illustration layer (Gear 5 Luffy) */
+/* Base illustration layer (Gear 5 Luffy with clean white background) */
 .luffy-base-layer {
   position: absolute;
   top: 0;
@@ -24,7 +24,7 @@
   pointer-events: none;
 }
 
-/* Eye Socket Cutouts (Masked precisely to eye white perimeter) */
+/* Eye Socket Cutouts (Masked precisely to eye contour) */
 .luffy-eye-socket {
   position: absolute;
   pointer-events: none;
@@ -38,26 +38,26 @@
 
 /* Left Eye Socket (Viewer Left):
    In 1024x1024 image:
-   x: 365px (35.64%), width: 111px (10.84%)
-   y: 495px (48.34%), height: 107px (10.45%)
+   x: 360px (35.16%), width: 115px (11.23%)
+   y: 490px (47.85%), height: 115px (11.23%)
 */
 .eye-socket-left {
-  top: 48.34%;
-  left: 35.64%;
-  width: 10.84%;
-  height: 10.45%;
+  top: 47.85%;
+  left: 35.16%;
+  width: 11.23%;
+  height: 11.23%;
 }
 
 /* Right Eye Socket (Viewer Right):
    In 1024x1024 image:
    x: 565px (55.18%), width: 120px (11.72%)
-   y: 495px (48.34%), height: 107px (10.45%)
+   y: 490px (47.85%), height: 115px (11.23%)
 */
 .eye-socket-right {
-  top: 48.34%;
+  top: 47.85%;
   left: 55.18%;
   width: 11.72%;
-  height: 10.45%;
+  height: 11.23%;
 }
 
 /* Moving Pupils/Irises with Spring Physics */
@@ -69,25 +69,25 @@
 }
 
 /* Left Iris inside socket:
-   Resting pos: left = 45.95%, top = 21.50%
-   Size: 45.05% wide, 54.21% high
+   Resting pos: left = 33.91%, top = 22.61%
+   Size: 45.22% wide, 53.91% high
 */
 .pupil-left {
-  top: 21.5%;
-  left: 45.95%;
-  width: 45.05%;
-  height: 54.21%;
+  top: 22.61%;
+  left: 33.91%;
+  width: 45.22%;
+  height: 53.91%;
 }
 
 /* Right Iris inside socket:
-   Resting pos: left = 29.17%, top = 21.50%
-   Size: 41.67% wide, 54.21% high
+   Resting pos: left = 28.33%, top = 15.65%
+   Size: 43.33% wide, 53.91% high
 */
 .pupil-right {
-  top: 21.5%;
-  left: 29.17%;
-  width: 41.67%;
-  height: 54.21%;
+  top: 15.65%;
+  left: 28.33%;
+  width: 43.33%;
+  height: 53.91%;
 }
 
 /* Blinking Animation Eyelids */
@@ -104,18 +104,18 @@
 }
 
 .eyelid-left {
-  top: 48.34%;
-  left: 35.64%;
-  width: 10.84%;
-  height: 10.45%;
+  top: 47.85%;
+  left: 35.16%;
+  width: 11.23%;
+  height: 11.23%;
   border-radius: 50% 50% 30% 30%;
 }
 
 .eyelid-right {
-  top: 48.34%;
+  top: 47.85%;
   left: 55.18%;
   width: 11.72%;
-  height: 10.45%;
+  height: 11.23%;
   border-radius: 50% 50% 30% 30%;
 }
 
