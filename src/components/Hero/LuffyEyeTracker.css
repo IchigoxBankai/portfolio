@@ -1,5 +1,5 @@
 /* ===================================================
-   LUFFY EYE-TRACKING AVATAR PORTAL STYLES
+   GEAR 5 LUFFY EYE-TRACKING AVATAR PORTAL STYLES
    =================================================== */
 
 .luffy-tracker-container {
@@ -11,7 +11,7 @@
   background: #FFFFFF;
 }
 
-/* Base illustration layer */
+/* Base illustration layer (Gear 5 Luffy) */
 .luffy-base-layer {
   position: absolute;
   top: 0;
@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 22%;
   display: block;
   pointer-events: none;
 }
@@ -37,30 +37,30 @@
 }
 
 /* Left Eye Socket (Viewer Left):
-   In 1007x1024 original image:
-   x: 338px (33.56%), width: 124px (12.31%)
-   y: 511px (49.90%), height: 104px (10.16%)
+   In 1024x1024 image:
+   x: 365px (35.64%), width: 111px (10.84%)
+   y: 495px (48.34%), height: 107px (10.45%)
 */
 .eye-socket-left {
-  top: 49.9%;
-  left: 33.56%;
-  width: 12.31%;
-  height: 10.16%;
+  top: 48.34%;
+  left: 35.64%;
+  width: 10.84%;
+  height: 10.45%;
 }
 
 /* Right Eye Socket (Viewer Right):
-   In 1007x1024 original image:
-   x: 570px (56.60%), width: 124px (12.31%)
-   y: 499px (48.73%), height: 106px (10.35%)
+   In 1024x1024 image:
+   x: 565px (55.18%), width: 120px (11.72%)
+   y: 495px (48.34%), height: 107px (10.45%)
 */
 .eye-socket-right {
-  top: 48.73%;
-  left: 56.6%;
-  width: 12.31%;
-  height: 10.35%;
+  top: 48.34%;
+  left: 55.18%;
+  width: 11.72%;
+  height: 10.45%;
 }
 
-/* Moving Pupils with Spring Physics */
+/* Moving Pupils/Irises with Spring Physics */
 .luffy-pupil {
   position: absolute;
   pointer-events: none;
@@ -68,26 +68,26 @@
   transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Left Pupil inside socket:
-   Original resting pos: left = 48px, top = 19px
-   Size: 49px wide (39.52% of 124px socket), 66px high (63.46% of 104px socket)
+/* Left Iris inside socket:
+   Resting pos: left = 45.95%, top = 21.50%
+   Size: 45.05% wide, 54.21% high
 */
 .pupil-left {
-  top: 18.27%;
-  left: 38.71%;
-  width: 39.52%;
-  height: 63.46%;
+  top: 21.5%;
+  left: 45.95%;
+  width: 45.05%;
+  height: 54.21%;
 }
 
-/* Right Pupil inside socket:
-   Original resting pos: left = 26px, top = 21px
-   Size: 49px wide (39.52% of 124px socket), 60px high (56.60% of 106px socket)
+/* Right Iris inside socket:
+   Resting pos: left = 29.17%, top = 21.50%
+   Size: 41.67% wide, 54.21% high
 */
 .pupil-right {
-  top: 19.81%;
-  left: 20.97%;
-  width: 39.52%;
-  height: 56.6%;
+  top: 21.5%;
+  left: 29.17%;
+  width: 41.67%;
+  height: 54.21%;
 }
 
 /* Blinking Animation Eyelids */
@@ -104,18 +104,18 @@
 }
 
 .eyelid-left {
-  top: 49.9%;
-  left: 33.56%;
-  width: 12.31%;
-  height: 10.16%;
+  top: 48.34%;
+  left: 35.64%;
+  width: 10.84%;
+  height: 10.45%;
   border-radius: 50% 50% 30% 30%;
 }
 
 .eyelid-right {
-  top: 48.73%;
-  left: 56.6%;
-  width: 12.31%;
-  height: 10.35%;
+  top: 48.34%;
+  left: 55.18%;
+  width: 11.72%;
+  height: 10.45%;
   border-radius: 50% 50% 30% 30%;
 }
 
@@ -123,4 +123,3 @@
   opacity: 1;
   transform: scaleY(1);
 }
-
