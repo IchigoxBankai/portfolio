@@ -26,12 +26,12 @@ const skills = [
   { icon: <FaReact />, title: "React", color: "#61DAFB" },
   { icon: <SiTailwindcss />, title: "Tailwind CSS", color: "#38BDF8" },
   { icon: <FaNodeJs />, title: "Node.js", color: "#5FA04E" },
-  { icon: <SiExpress />, title: "Express.js", color: "#ffffff" },
+  { icon: <SiExpress />, title: "Express.js", color: "#111111" },
   { icon: <SiMongodb />, title: "MongoDB", color: "#47A248" },
   { icon: <SiFirebase />, title: "Firebase", color: "#FFCA28" },
   { icon: <FaGitAlt />, title: "Git", color: "#F05032" },
-  { icon: <FaGithub />, title: "GitHub", color: "#ffffff" },
-  { icon: <SiVercel />, title: "Vercel", color: "#ffffff" },
+  { icon: <FaGithub />, title: "GitHub", color: "#111111" },
+  { icon: <SiVercel />, title: "Vercel", color: "#111111" },
 ];
 
 function TechStack() {

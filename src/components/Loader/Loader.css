@@ -57,7 +57,7 @@
   word-spacing: 12px;
   font-weight: 1000;
   color: #d3c6c6;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9), 0 0 25px rgba(227, 6, 19, 0.5);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9), 0 0 25px rgba(229, 9, 20, 0.5);
   text-align: center;
   width: 100%;
 }
@@ -88,8 +88,8 @@
 
 .loading-progress {
   height: 100%;
-  background: #E30613;
-  box-shadow: 0 0 12px #E30613;
+  background: #E50914;
+  box-shadow: 0 0 12px #E50914;
 }
 
 /* Sound & Skip Controls */
@@ -121,10 +121,10 @@
 }
 
 .loader-btn:hover {
-  background: #E30613;
-  border-color: #E30613;
+  background: #E50914;
+  border-color: #E50914;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(227, 6, 19, 0.4);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
 }
 
 .cantarell-regular {

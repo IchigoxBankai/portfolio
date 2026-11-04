@@ -19,7 +19,9 @@ function Footer() {
     <footer className="footer">
       <div className="container">
         <h2>
-          Nihar Puthran<span style={{ color: "#E50914" }}>.</span>
+          <span className="footer-name-red">NIHAR</span>{' '}
+          <span className="footer-name-white">PUTHRAN</span>
+          <span className="footer-dot-red">.</span>
         </h2>
 
         <p>

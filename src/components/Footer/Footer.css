@@ -16,7 +16,7 @@
     transform: translateX(-50%);
     width: 50%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(227, 6, 19, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(229, 9, 20, 0.4), transparent);
 }
 
 .footer h2 {
@@ -25,6 +25,20 @@
     font-family: var(--heading);
     color: #ffffff;
     letter-spacing: 0.5px;
+}
+
+.footer-name-red {
+    color: #E50914;
+    font-weight: 900;
+}
+
+.footer-name-white {
+    color: #FFFFFF;
+    font-weight: 900;
+}
+
+.footer-dot-red {
+    color: #E50914;
 }
 
 .footer p {
@@ -57,11 +71,11 @@
 }
 
 .footer-socials a:hover {
-    background: #E30613;
+    background: #E50914;
     color: white;
-    border-color: #E30613;
+    border-color: #E50914;
     transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(227, 6, 19, 0.35);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.35);
 }
 
 .top-btn {
@@ -70,12 +84,12 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    background: #E30613;
+    background: #E50914;
     color: white;
     font-size: 1.1rem;
     margin-bottom: 35px;
     transition: all .35s ease;
-    box-shadow: 0 10px 25px rgba(227, 6, 19, 0.3);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
 }
 
 .top-btn:hover {

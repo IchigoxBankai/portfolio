@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   FaReact,
   FaJs,
@@ -7,9 +7,13 @@ import {
   FaBolt,
   FaArrowRight,
   FaDownload,
+  FaGithub,
 } from "react-icons/fa";
-import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si";
-import { CheckCircle2, Copy, Check, Terminal } from "lucide-react";
+import { SiFirebase, SiTailwindcss } from "react-icons/si";
+import { CheckCircle2, ExternalLink, Lock, Gamepad2 } from "lucide-react";
+import monsterImg from "../../assets/images/projects/monster.png";
+import githubUniverseImg from "../../assets/images/projects/GitHubUniverse.png";
+import gameVaultImg from "../../assets/images/projects/GameVault.png";
 import "./About.css";
 
 const skills = [
@@ -27,25 +31,49 @@ const pillars = [
   "High-Performance & Responsive UI",
 ];
 
-const rawCodeString = `const nihar: Developer = {
-  name: "Nihar Puthran",
-  role: "Frontend Developer & UI Designer",
-  location: "Mumbai, India",
-  education: {
-    field: "Computer Science",
-    cgpa: 9.52, // Academic Excellence
-  },
-  mindset: "Every project is another step towards my Bankai.",
-  status: "Available for high-impact work",
-};`;
-
 function About() {
-  const [copied, setCopied] = useState(false);
+  const [canHover, setCanHover] = useState(false);
 
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(rawCodeString);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  useEffect(() => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      setCanHover(true);
+    }
+  }, []);
+
+  // Framer Motion 3D Mouse Parallax & Tilt
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 220 };
+  const smoothMouseX = useSpring(mouseX, springConfig);
+  const smoothMouseY = useSpring(mouseY, springConfig);
+
+  // 3D rotation for the main workspace browser window
+  const rotateX = useTransform(smoothMouseY, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(smoothMouseX, [-0.5, 0.5], ["-5deg", "5deg"]);
+
+  // Gentle layered parallax shifts for overlapping cards & badges
+  const card1ParallaxX = useTransform(smoothMouseX, [-0.5, 0.5], [-8, 8]);
+  const card1ParallaxY = useTransform(smoothMouseY, [-0.5, 0.5], [-10, 10]);
+
+  const card2ParallaxX = useTransform(smoothMouseX, [-0.5, 0.5], [10, -10]);
+  const card2ParallaxY = useTransform(smoothMouseY, [-0.5, 0.5], [8, -8]);
+
+  const badgeParallaxX = useTransform(smoothMouseX, [-0.5, 0.5], [-12, 12]);
+  const badgeParallaxY = useTransform(smoothMouseY, [-0.5, 0.5], [-12, 12]);
+
+  const handleMouseMove = (e) => {
+    if (!canHover) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
+    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(xPct);
+    mouseY.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
   };
 
   return (
@@ -54,7 +82,7 @@ function About() {
       <div className="about-ambient-glow" />
 
       <div className="container about-container">
-        {/* ================= LEFT: DEVELOPER CODE CARD ================= */}
+        {/* ================= LEFT: DIGITAL WORKSPACE SHOWCASE ================= */}
         <motion.div
           className="about-visual-column"
           initial={{ opacity: 0, x: -30 }}
@@ -62,160 +90,250 @@ function About() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="dev-code-card">
-            {/* macOS Window Titlebar */}
-            <div className="code-card-header">
-              <div className="traffic-lights">
-                <span className="dot dot-red" />
-                <span className="dot dot-yellow" />
-                <span className="dot dot-green" />
+          <div
+            className="workspace-showcase"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Soft Red Ambient Glow behind composition */}
+            <div className="workspace-ambient-glow" aria-hidden="true" />
+
+            {/* Main Browser Window (Monster Energy) */}
+            <motion.div
+              className="workspace-browser-window"
+              style={{
+                rotateX: canHover ? rotateX : 0,
+                rotateY: canHover ? rotateY : 0,
+                transformStyle: "preserve-3d",
+              }}
+              initial={{ opacity: 0, scale: 0.92, y: 24 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Minimal Browser Toolbar */}
+              <div className="browser-toolbar">
+                <div className="browser-traffic-lights" aria-hidden="true">
+                  <span className="dot dot-red" />
+                  <span className="dot dot-yellow" />
+                  <span className="dot dot-green" />
+                </div>
+
+                <div className="browser-address-bar">
+                  <Lock size={11} className="address-lock-icon" />
+                  <span className="address-url">monster-energy-website.vercel.app</span>
+                </div>
+
+                <a
+                  href="https://monster-energy-website.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="browser-open-btn"
+                  title="Open live project"
+                  aria-label="Open Monster Energy live website"
+                >
+                  <ExternalLink size={12} />
+                </a>
               </div>
 
-              <div className="code-card-tab">
-                <SiTypescript className="tab-ts-icon" />
-                <span>nihar.bio.ts</span>
-              </div>
+              {/* Project Preview Image */}
+              <div className="browser-preview-viewport">
+                <img
+                  src={monsterImg}
+                  alt="Monster Energy Website Preview"
+                  className="browser-preview-img"
+                  loading="lazy"
+                />
 
-              <button
-                type="button"
-                className="code-copy-btn"
-                onClick={handleCopyCode}
-                title="Copy snippet"
-                aria-label="Copy developer code snippet"
+                {/* Subtle Project Info Bar at bottom of browser window */}
+                <div className="browser-project-meta">
+                  <div className="meta-info">
+                    <span className="meta-badge-live">
+                      <span className="live-ping" />
+                      Live Project
+                    </span>
+                    <span className="meta-title">Monster Energy</span>
+                  </div>
+                  <span className="meta-tag">Featured Web</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Overlapping Project Card 1: GitHub Universe */}
+            <motion.div
+              className="workspace-float-card card-github-universe"
+              style={{
+                x: canHover ? card1ParallaxX : 0,
+                y: canHover ? card1ParallaxY : 0,
+              }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6, scale: 1.03 }}
+            >
+              <a
+                href="https://ichigoxbankai.github.io/GithubUniverse/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="float-card-link"
+                title="View GitHub Universe"
               >
-                {copied ? <Check size={14} className="copy-check" /> : <Copy size={14} />}
-                <span className="copy-text">{copied ? "Copied" : "Copy"}</span>
-              </button>
-            </div>
+                <div className="float-card-thumb">
+                  <img
+                    src={githubUniverseImg}
+                    alt="GitHub Universe Project"
+                    loading="lazy"
+                  />
+                  <span className="float-card-icon-badge" aria-label="GitHub Project">
+                    <FaGithub size={13} />
+                  </span>
+                </div>
 
-            {/* Code Body with Realistic Syntax Highlighting */}
-            <div className="code-editor-body">
-              <pre className="code-content">
-                <code>
-                  <div className="code-line">
-                    <span className="line-num">01</span>
-                    <span className="token-keyword">const </span>
-                    <span className="token-variable">nihar</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-type">Developer </span>
-                    <span className="token-punct">= </span>
-                    <span className="token-punct">&#123;</span>
+                <div className="float-card-body">
+                  <div className="float-card-header">
+                    <span className="float-card-name">GithubUniverse</span>
+                    <ExternalLink size={11} className="float-card-ext" />
                   </div>
-
-                  <div className="code-line">
-                    <span className="line-num">02</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">name</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string">"Nihar Puthran"</span>
-                    <span className="token-punct">,</span>
+                  <div className="float-card-tags">
+                    <span className="mini-badge">3D Solar System</span>
+                    <span className="mini-badge-tech">Three.js</span>
                   </div>
+                </div>
+              </a>
+            </motion.div>
 
-                  <div className="code-line">
-                    <span className="line-num">03</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">role</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string">"Frontend Developer &amp; UI Designer"</span>
-                    <span className="token-punct">,</span>
+            {/* Overlapping Project Card 2: GameVault */}
+            <motion.div
+              className="workspace-float-card card-gamevault"
+              style={{
+                x: canHover ? card2ParallaxX : 0,
+                y: canHover ? card2ParallaxY : 0,
+              }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6, scale: 1.03 }}
+            >
+              <a
+                href="https://game-vault-henna-pi.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="float-card-link"
+                title="View GameVault"
+              >
+                <div className="float-card-thumb">
+                  <img
+                    src={gameVaultImg}
+                    alt="GameVault Project"
+                    loading="lazy"
+                  />
+                  <span className="float-card-icon-badge badge-crimson" aria-label="Game Project">
+                    <Gamepad2 size={13} />
+                  </span>
+                </div>
+
+                <div className="float-card-body">
+                  <div className="float-card-header">
+                    <span className="float-card-name">GameVault</span>
+                    <ExternalLink size={11} className="float-card-ext" />
                   </div>
-
-                  <div className="code-line">
-                    <span className="line-num">04</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">location</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string">"Mumbai, India 🇮🇳"</span>
-                    <span className="token-punct">,</span>
+                  <div className="float-card-tags">
+                    <span className="mini-badge">Games Hub</span>
+                    <span className="mini-badge-tech">React • Flutter</span>
                   </div>
+                </div>
+              </a>
+            </motion.div>
 
-                  <div className="code-line">
-                    <span className="line-num">05</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">education</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-punct">&#123;</span>
-                  </div>
+            {/* Floating Tech Badge 1: React */}
+            <motion.div
+              className="floating-tech-badge-wrapper badge-pos-react"
+              style={{
+                x: canHover ? badgeParallaxX : 0,
+                y: canHover ? badgeParallaxY : 0,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+            >
+              <motion.div
+                className="floating-tech-badge"
+                animate={{ y: [-4, 4, -4] }}
+                transition={{ repeat: Infinity, duration: 4.4, ease: "easeInOut" }}
+                whileHover={{ y: -3, scale: 1.06 }}
+              >
+                <FaReact className="tech-badge-icon" style={{ color: "#61DAFB" }} />
+                <span className="tech-badge-name">React</span>
+              </motion.div>
+            </motion.div>
 
-                  <div className="code-line">
-                    <span className="line-num">06</span>
-                    <span className="token-indent">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span className="token-key">field</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string">"Computer Science"</span>
-                    <span className="token-punct">,</span>
-                  </div>
+            {/* Floating Tech Badge 2: JavaScript */}
+            <motion.div
+              className="floating-tech-badge-wrapper badge-pos-js"
+              style={{
+                x: canHover ? card1ParallaxX : 0,
+                y: canHover ? card1ParallaxY : 0,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+            >
+              <motion.div
+                className="floating-tech-badge"
+                animate={{ y: [4, -4, 4] }}
+                transition={{ repeat: Infinity, duration: 5.1, ease: "easeInOut" }}
+                whileHover={{ y: -3, scale: 1.06 }}
+              >
+                <FaJs className="tech-badge-icon" style={{ color: "#F7DF1E" }} />
+                <span className="tech-badge-name">JavaScript</span>
+              </motion.div>
+            </motion.div>
 
-                  <div className="code-line highlight-line">
-                    <span className="line-num">07</span>
-                    <span className="token-indent">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span className="token-key">cgpa</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-number">9.52</span>
-                    <span className="token-punct">, </span>
-                    <span className="token-comment">// Academic Score</span>
-                  </div>
+            {/* Floating Tech Badge 3: Firebase */}
+            <motion.div
+              className="floating-tech-badge-wrapper badge-pos-firebase"
+              style={{
+                x: canHover ? card2ParallaxX : 0,
+                y: canHover ? card2ParallaxY : 0,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.62 }}
+            >
+              <motion.div
+                className="floating-tech-badge"
+                animate={{ y: [-3, 4, -3] }}
+                transition={{ repeat: Infinity, duration: 4.8, ease: "easeInOut" }}
+                whileHover={{ y: -3, scale: 1.06 }}
+              >
+                <SiFirebase className="tech-badge-icon" style={{ color: "#FFCA28" }} />
+                <span className="tech-badge-name">Firebase</span>
+              </motion.div>
+            </motion.div>
 
-                  <div className="code-line">
-                    <span className="line-num">08</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-punct">&#125;,</span>
-                  </div>
+            {/* Decorative Red Geometric Elements */}
+            <motion.div
+              className="decorative-red-shape shape-diamond"
+              animate={{ rotate: [0, 180, 360], y: [-3, 3, -3] }}
+              transition={{ repeat: Infinity, duration: 16, ease: "linear" }}
+              aria-hidden="true"
+            >
+              <span className="diamond-inner" />
+            </motion.div>
 
-                  <div className="code-line">
-                    <span className="line-num">09</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">experience</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string">"3+ Years Modern Web"</span>
-                    <span className="token-punct">,</span>
-                  </div>
-
-                  <div className="code-line highlight-bankai">
-                    <span className="line-num">10</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">mindset</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string token-bankai">"Towards my Bankai ⚔️"</span>
-                    <span className="token-punct">,</span>
-                  </div>
-
-                  <div className="code-line">
-                    <span className="line-num">11</span>
-                    <span className="token-indent">&nbsp;&nbsp;</span>
-                    <span className="token-key">status</span>
-                    <span className="token-punct">: </span>
-                    <span className="token-string token-status">"Available for Work"</span>
-                  </div>
-
-                  <div className="code-line">
-                    <span className="line-num">12</span>
-                    <span className="token-punct">&#125;;</span>
-                  </div>
-                </code>
-              </pre>
-            </div>
-
-            {/* Code Card Status Bar */}
-            <div className="code-card-statusbar">
-              <div className="status-item">
-                <Terminal size={13} className="status-terminal-icon" />
-                <span>TypeScript 5.4</span>
-              </div>
-              <div className="status-item status-live">
-                <span className="status-dot-pulse" />
-                <span>Ready to Build</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Signature Quote Callout */}
-          <div className="about-quote-box">
-            <div className="quote-mark">“</div>
-            <p className="quote-text">
-              Every project is another step towards my Bankai.
-            </p>
-            <span className="quote-author">— Nihar Puthran</span>
+            <motion.div
+              className="decorative-red-shape shape-cross"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.65, 1, 0.65] }}
+              transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut" }}
+              aria-hidden="true"
+            >
+              +
+            </motion.div>
           </div>
         </motion.div>
 
