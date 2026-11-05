@@ -1,17 +1,27 @@
 import { useEffect, useRef, useState } from "react";
-import luffyBase from "../../assets/images/hero/luffy_base.png";
-import pupilLeft from "../../assets/images/hero/luffy_pupil_left.png";
-import pupilRight from "../../assets/images/hero/luffy_pupil_right.png";
-import maskLeft from "../../assets/images/hero/eye_mask_left.png";
-import maskRight from "../../assets/images/hero/eye_mask_right.png";
+// Gear 5 Luffy Assets
+import gear5Base from "../../assets/images/hero/luffy_base.png";
+import gear5PupilLeft from "../../assets/images/hero/luffy_pupil_left.png";
+import gear5PupilRight from "../../assets/images/hero/luffy_pupil_right.png";
+import gear5MaskLeft from "../../assets/images/hero/eye_mask_left.png";
+import gear5MaskRight from "../../assets/images/hero/eye_mask_right.png";
+
+// Straw Hat Luffy Assets
+import strawhatBase from "../../assets/images/hero/strawhat_base.png";
+import strawhatPupilLeft from "../../assets/images/hero/strawhat_pupil_left.png";
+import strawhatPupilRight from "../../assets/images/hero/strawhat_pupil_right.png";
+import strawhatMaskLeft from "../../assets/images/hero/strawhat_mask_left.png";
+import strawhatMaskRight from "../../assets/images/hero/strawhat_mask_right.png";
+
 import "./LuffyEyeTracker.css";
 
 /**
  * Interactive Eye-Tracking Character Portal Component
+ * Supports both Gear 5 (White Hair) and Straw Hat (Red Outfit) Luffy.
  * Calculates vector angle & distance between mouse cursor and pupil centers,
  * smoothly moving the pupils within Luffy's eye sockets.
  */
-export default function LuffyEyeTracker() {
+export default function LuffyEyeTracker({ variant = "gear5" }) {
   const containerRef = useRef(null);
   const leftEyeRef = useRef(null);
   const rightEyeRef = useRef(null);
@@ -22,6 +32,14 @@ export default function LuffyEyeTracker() {
   });
 
   const [isBlinking, setIsBlinking] = useState(false);
+
+  const isGear5 = variant === "gear5";
+  const baseImg = isGear5 ? gear5Base : strawhatBase;
+  const pupilLeft = isGear5 ? gear5PupilLeft : strawhatPupilLeft;
+  const pupilRight = isGear5 ? gear5PupilRight : strawhatPupilRight;
+  const maskLeft = isGear5 ? gear5MaskLeft : strawhatMaskLeft;
+  const maskRight = isGear5 ? gear5MaskRight : strawhatMaskRight;
+  const altText = isGear5 ? "Gear 5 Monkey D. Luffy" : "Straw Hat Monkey D. Luffy";
 
   // Periodic natural anime blinking
   useEffect(() => {
@@ -65,7 +83,6 @@ export default function LuffyEyeTracker() {
       const dyL = e.clientY - lCenterY;
       const angleL = Math.atan2(dyL, dxL);
       const distL = Math.hypot(dxL, dyL);
-      // Normalized distance factor (smooth clamp up to 500px screen distance)
       const factorL = Math.min(distL / 320, 1);
       const leftX = Math.cos(angleL) * maxRadiusX * factorL;
       const leftY = Math.sin(angleL) * maxRadiusY * factorL;
@@ -90,11 +107,16 @@ export default function LuffyEyeTracker() {
   }, []);
 
   return (
-    <div className={`luffy-tracker-container ${isBlinking ? "is-blinking" : ""}`} ref={containerRef}>
+    <div
+      className={`luffy-tracker-container ${isGear5 ? "variant-gear5" : "variant-strawhat"} ${
+        isBlinking ? "is-blinking" : ""
+      }`}
+      ref={containerRef}
+    >
       {/* Base Layer: Luffy without pupils */}
       <img
-        src={luffyBase}
-        alt="Monkey D. Luffy"
+        src={baseImg}
+        alt={altText}
         className="luffy-base-layer"
         loading="eager"
       />
@@ -143,4 +165,3 @@ export default function LuffyEyeTracker() {
     </div>
   );
 }
-

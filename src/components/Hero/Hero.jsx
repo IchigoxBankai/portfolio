@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
   ArrowUpRight,
@@ -14,24 +14,14 @@ import {
 } from "react-icons/fa";
 import { SiFirebase } from "react-icons/si";
 
-// Avatar options: av4.jpg is the anime headphones character matching Enji Kusnadi reference!
-import luffyImg from "../../assets/images/hero/luffy.png";
-import avHeadphones from "../../assets/images/logo/av4.jpg";
-import avGlasses from "../../assets/images/hero/hero1.webp";
-import avCasual from "../../assets/images/logo/avatar.webp";
-import avAnimeBw from "../../assets/images/hero/av7.jpg";
-
 import heroSmokeBg from "../../assets/images/hero/hero-bg.png";
-
 import LuffyEyeTracker from "./LuffyEyeTracker";
 import "./Hero.css";
 
+// 2 interactive avatars: White Gear 5 Luffy & Straw Hat Luffy
 const avatarOptions = [
-  { img: luffyImg, name: "Monkey D. Luffy" },
-  { img: avHeadphones, name: "Studio Mode (Headphones)" },
-  { img: avGlasses, name: "Deep Focus (Glasses)" },
-  { img: avCasual, name: "Casual Flow" },
-  { img: avAnimeBw, name: "Bankai Mindset" },
+  { id: "gear5", name: "Gear 5 Luffy (White)" },
+  { id: "strawhat", name: "Straw Hat Luffy (Red Outfit)" },
 ];
 
 // Staggered Entrance Variants
@@ -242,7 +232,7 @@ function Hero() {
               <div
                 className="character-portal"
                 onClick={handleCycleAvatar}
-                title="Click to cycle avatar"
+                title="Click to switch avatar (Gear 5 / Straw Hat)"
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -258,20 +248,18 @@ function Hero() {
 
                 {/* Character Image Mask */}
                 <div className="character-frame">
-                  {avatarIndex === 0 ? (
-                    <LuffyEyeTracker />
-                  ) : (
-                    <motion.img
-                      key={avatarIndex}
-                      src={avatarOptions[avatarIndex].img}
-                      alt={avatarOptions[avatarIndex].name}
-                      className="character-image"
-                      initial={{ opacity: 0, scale: 0.96 }}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={avatarOptions[avatarIndex].id}
+                      initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4 }}
-                      loading="eager"
-                    />
-                  )}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.28, ease: "easeInOut" }}
+                      style={{ width: "100%", height: "100%" }}
+                    >
+                      <LuffyEyeTracker variant={avatarOptions[avatarIndex].id} />
+                    </motion.div>
+                  </AnimatePresence>
                   <div className="character-glass-rim" />
                 </div>
               </div>

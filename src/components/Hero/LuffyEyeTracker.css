@@ -1,5 +1,5 @@
 /* ===================================================
-   GEAR 5 LUFFY EYE-TRACKING AVATAR PORTAL STYLES
+   LUFFY EYE-TRACKING AVATAR PORTAL STYLES (GEAR 5 & STRAWHAT)
    =================================================== */
 
 .luffy-tracker-container {
@@ -11,7 +11,7 @@
   background: #FFFFFF;
 }
 
-/* Base illustration layer (Gear 5 Luffy with clean white background) */
+/* Base illustration layer */
 .luffy-base-layer {
   position: absolute;
   top: 0;
@@ -19,9 +19,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%;
   display: block;
   pointer-events: none;
+}
+
+/* Base positioning for Gear 5 Luffy */
+.variant-gear5 .luffy-base-layer {
+  object-position: center 22%;
+}
+
+/* Base positioning for Straw Hat Luffy */
+.variant-strawhat .luffy-base-layer {
+  object-position: center 18%;
 }
 
 /* Eye Socket Cutouts (Masked precisely to eye contour) */
@@ -36,30 +45,6 @@
   overflow: hidden;
 }
 
-/* Left Eye Socket (Viewer Left):
-   In 1024x1024 image:
-   x: 355px (34.67%), width: 120px (11.72%)
-   y: 490px (47.85%), height: 115px (11.23%)
-*/
-.eye-socket-left {
-  top: 47.85%;
-  left: 34.67%;
-  width: 11.72%;
-  height: 11.23%;
-}
-
-/* Right Eye Socket (Viewer Right):
-   In 1024x1024 image:
-   x: 565px (55.18%), width: 120px (11.72%)
-   y: 490px (47.85%), height: 115px (11.23%)
-*/
-.eye-socket-right {
-  top: 47.85%;
-  left: 55.18%;
-  width: 11.72%;
-  height: 11.23%;
-}
-
 /* Moving Pupils/Irises with Spring Physics */
 .luffy-pupil {
   position: absolute;
@@ -68,26 +53,104 @@
   transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Left Iris inside socket:
-   Resting pos: left = 37.50%, top = 26.09%
-   Size: 50.0% wide, 62.61% high
-*/
-.pupil-left {
+/* ===================================================
+   GEAR 5 LUFFY (WHITE HAIR / SUN GOD NIKA)
+   In 1024x1024 image:
+   Left Eye Socket: x: 355px (34.67%), width: 120px (11.72%), y: 490px (47.85%), height: 115px (11.23%)
+   Right Eye Socket: x: 565px (55.18%), width: 120px (11.72%), y: 490px (47.85%), height: 115px (11.23%)
+   =================================================== */
+.variant-gear5 .eye-socket-left {
+  top: 47.85%;
+  left: 34.67%;
+  width: 11.72%;
+  height: 11.23%;
+}
+
+.variant-gear5 .eye-socket-right {
+  top: 47.85%;
+  left: 55.18%;
+  width: 11.72%;
+  height: 11.23%;
+}
+
+.variant-gear5 .pupil-left {
   top: 26.09%;
   left: 37.5%;
   width: 50%;
   height: 62.61%;
 }
 
-/* Right Iris inside socket:
-   Resting pos: left = 29.17%, top = 26.09%
-   Size: 50.0% wide, 62.61% high
-*/
-.pupil-right {
+.variant-gear5 .pupil-right {
   top: 26.09%;
   left: 29.17%;
   width: 50%;
   height: 62.61%;
+}
+
+.variant-gear5 .eyelid-left {
+  top: 47.85%;
+  left: 34.67%;
+  width: 11.72%;
+  height: 11.23%;
+  border-radius: 50% 50% 30% 30%;
+}
+
+.variant-gear5 .eyelid-right {
+  top: 47.85%;
+  left: 55.18%;
+  width: 11.72%;
+  height: 11.23%;
+  border-radius: 50% 50% 30% 30%;
+}
+
+/* ===================================================
+   STRAW HAT LUFFY (RED OUTFIT / STRAW HAT)
+   In 1007x1024 image:
+   Left Eye Socket: x: 338px (33.56%), width: 124px (12.31%), y: 511px (49.90%), height: 104px (10.16%)
+   Right Eye Socket: x: 570px (56.60%), width: 124px (12.31%), y: 499px (48.73%), height: 106px (10.35%)
+   =================================================== */
+.variant-strawhat .eye-socket-left {
+  top: 49.9%;
+  left: 33.56%;
+  width: 12.31%;
+  height: 10.16%;
+}
+
+.variant-strawhat .eye-socket-right {
+  top: 48.73%;
+  left: 56.6%;
+  width: 12.31%;
+  height: 10.35%;
+}
+
+.variant-strawhat .pupil-left {
+  top: 18.27%;
+  left: 38.71%;
+  width: 39.52%;
+  height: 63.46%;
+}
+
+.variant-strawhat .pupil-right {
+  top: 19.81%;
+  left: 20.97%;
+  width: 39.52%;
+  height: 56.6%;
+}
+
+.variant-strawhat .eyelid-left {
+  top: 49.9%;
+  left: 33.56%;
+  width: 12.31%;
+  height: 10.16%;
+  border-radius: 50% 50% 30% 30%;
+}
+
+.variant-strawhat .eyelid-right {
+  top: 48.73%;
+  left: 56.6%;
+  width: 12.31%;
+  height: 10.35%;
+  border-radius: 50% 50% 30% 30%;
 }
 
 /* Blinking Animation Eyelids */
@@ -101,22 +164,6 @@
   transform: scaleY(0);
   transform-origin: top center;
   transition: transform 0.08s ease-in, opacity 0.08s ease-in;
-}
-
-.eyelid-left {
-  top: 47.85%;
-  left: 34.67%;
-  width: 11.72%;
-  height: 11.23%;
-  border-radius: 50% 50% 30% 30%;
-}
-
-.eyelid-right {
-  top: 47.85%;
-  left: 55.18%;
-  width: 11.72%;
-  height: 11.23%;
-  border-radius: 50% 50% 30% 30%;
 }
 
 .is-blinking .luffy-eyelid {
