@@ -107,7 +107,7 @@ function Loader({ children }) {
                   ease: "easeOut",
                 }}
               >
-                <h2 className="rubik-dirt-regular">Nihar   Puthran</h2>
+                <h2 className="rubik-dirt-regular">Nihar Puthran</h2>
                 <p>Frontend Developer</p>
 
                 <div className="loading-bar">
