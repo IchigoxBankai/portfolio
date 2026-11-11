@@ -49,6 +49,7 @@ function Projects() {
     if (activeCategory === "Creative & Interactive") {
       return projects.filter((p) =>
         [
+          "CRUNCHA",
           "GithubUniverse",
           "Monster",
           "Stylo",

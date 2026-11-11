@@ -1,3 +1,5 @@
+import nexusOs from "../assets/images/projects/NexusOS.png";
+import cruncha from "../assets/images/projects/Cruncha.png";
 import brewbite from "../assets/images/projects/BrewBite.png";
 import watchmate from "../assets/images/projects/WatchMate.png";
 import folderlens from "../assets/images/projects/FolderLens.png";
@@ -20,14 +22,14 @@ import clientflow from "../assets/images/projects/ClientFlow.png";
 const projects = [
   {
     id: 1,
-    title: "BrewBite Café",
-    category: "Digital Café & Tabletop Ordering System",
-    image: brewbite,
+    title: "NEXUS OS",
+    category: "AI Personal Life & Workspace OS",
+    image: nexusOs,
     description:
-      "A modern digital ordering and café management platform featuring interactive menu browsing, tabletop ordering, dynamic UPI payments, table reservations, and live order tracking.",
-    tech: ["React", "Tailwind CSS", "Vite", "UI/UX"],
-    live: "https://brewbite-cafe.vercel.app/",
-    github: "https://github.com/IchigoxBankai",
+      "An AI-powered Personal Operating System built as a production monorepo that unifies task pipelines, strategic projects, smart scheduling, networked notes, habit tracking, and personal finance under an ambient glassmorphic UI.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "AI"],
+    live: "https://nexus-os-eight-lyart.vercel.app",
+    github: "https://github.com/IchigoxBankai/NexusOS",
   },
   {
     id: 2,
@@ -42,14 +44,14 @@ const projects = [
   },
   {
     id: 3,
-    title: "GameVault",
-    category: "Android Games Showcase & Hub",
-    image: gamevault,
+    title: "CRUNCHA",
+    category: "3D Interactive Brand & E-Commerce",
+    image: cruncha,
     description:
-      "A personal collection showcase of Android games and interactive experiments, featuring real-time multiplayer titles, RPG gachas, and instant APK downloads.",
-    tech: ["React", "Flutter", "Firebase", "WebRTC"],
-    live: "https://game-vault-henna-pi.vercel.app/",
-    github: "https://github.com/IchigoxBankai",
+      "A bold, energetic potato chips brand experience featuring interactive Three.js 3D pouch physics, GSAP scroll storytelling, Web Audio crunch sound effects, five explosive flavours, and a custom Build Your Box cart.",
+    tech: ["React", "Three.js", "GSAP", "Tailwind CSS"],
+    live: "https://ichigoxbankai.github.io/chips/",
+    github: "https://github.com/IchigoxBankai/chips",
   },
   {
     id: 4,
@@ -86,6 +88,28 @@ const projects = [
   },
   {
     id: 7,
+    title: "BrewBite Café",
+    category: "Digital Café & Tabletop Ordering System",
+    image: brewbite,
+    description:
+      "A modern digital ordering and café management platform featuring interactive menu browsing, tabletop ordering, dynamic UPI payments, table reservations, and live order tracking.",
+    tech: ["React", "Tailwind CSS", "Vite", "UI/UX"],
+    live: "https://brewbite-cafe.vercel.app/",
+    github: "https://github.com/IchigoxBankai",
+  },
+  {
+    id: 8,
+    title: "GameVault",
+    category: "Android Games Showcase & Hub",
+    image: gamevault,
+    description:
+      "A personal collection showcase of Android games and interactive experiments, featuring real-time multiplayer titles, RPG gachas, and instant APK downloads.",
+    tech: ["React", "Flutter", "Firebase", "WebRTC"],
+    live: "https://game-vault-henna-pi.vercel.app/",
+    github: "https://github.com/IchigoxBankai",
+  },
+  {
+    id: 9,
     title: "ToolSpace",
     category: "Utility & Developer Suite",
     image: toolspace,
@@ -96,7 +120,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/ToolSpace",
   },
   {
-    id: 8,
+    id: 10,
     title: "Monster",
     category: "Energy Drink Website",
     image: Monster,
@@ -107,7 +131,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 9,
+    id: 11,
     title: "AppVault",
     category: "Android App Showcase & Hub",
     image: appvault,
@@ -118,7 +142,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/app-vault",
   },
   {
-    id: 10,
+    id: 12,
     title: "DevDash",
     category: "Developer Workspace",
     image: devdash,
@@ -129,7 +153,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/devdash",
   },
   {
-    id: 11,
+    id: 13,
     title: "Stylo",
     category: "Luxury Sneaker Website",
     image: stylo,
@@ -140,7 +164,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/luxury-sneaker",
   },
   {
-    id: 12,
+    id: 14,
     title: "StudyFlow AI",
     category: "AI Learning Platform",
     image: studyflow,
@@ -151,7 +175,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 13,
+    id: 15,
     title: "PlayVerse",
     category: "Gaming Platform",
     image: playverse,
@@ -162,7 +186,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 14,
+    id: 16,
     title: "Sudo Cafe",
     category: "Cafe & Culinary Web App",
     image: sudocafe,
@@ -173,7 +197,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 15,
+    id: 17,
     title: "UH Properties",
     category: "Real Estate Platform",
     image: uhproperties,
@@ -184,7 +208,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 16,
+    id: 18,
     title: "MiniMart AI",
     category: "AI Retail Store Management OS",
     image: minimartAi,
@@ -195,7 +219,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/minimart-ai",
   },
   {
-    id: 17,
+    id: 19,
     title: "ClientFlow",
     category: "AI Freelance Business OS",
     image: clientflow,
@@ -206,7 +230,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/client-flow",
   },
   {
-    id: 18,
+    id: 20,
     title: "AnimeHub",
     category: "Anime Companion Platform",
     image: animehub,

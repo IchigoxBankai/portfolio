@@ -7,6 +7,7 @@ import {
   FaAward,
   FaCode,
 } from "react-icons/fa";
+import projects from "../../data/projects";
 
 function AnimatedCounter({ value, decimals = 0, duration = 1.8 }) {
   const [count, setCount] = useState(0);
@@ -56,7 +57,7 @@ const stats = [
   },
   {
     icon: <FaProjectDiagram />,
-    value: 18,
+    value: projects.length,
     suffix: "+",
     decimals: 0,
     title: "Projects Built",
