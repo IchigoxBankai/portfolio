@@ -18,6 +18,7 @@ import sudocafe from "../assets/images/projects/Sudo cafe.png";
 import uhproperties from "../assets/images/projects/UH Properties.png";
 import minimartAi from "../assets/images/projects/MiniMartAI.png";
 import clientflow from "../assets/images/projects/ClientFlow.png";
+import voiceforge from "../assets/images/projects/VoiceForge.png";
 
 const projects = [
   {
@@ -88,6 +89,17 @@ const projects = [
   },
   {
     id: 7,
+    title: "VoiceForge AI",
+    category: "AI Voice & Speech Platform",
+    image: voiceforge,
+    description:
+      "A production-grade AI audio platform for studio-quality neural text-to-speech generation and cross-lingual speech translation powered by ElevenLabs, OpenAI Whisper, and GPT-4o.",
+    tech: ["React", "ElevenLabs", "Tailwind CSS", "AI"],
+    live: "https://voiceforge-ai-delta.vercel.app/",
+    github: "https://github.com/IchigoxBankai/voiceforge",
+  },
+  {
+    id: 8,
     title: "BrewBite Café",
     category: "Digital Café & Tabletop Ordering System",
     image: brewbite,
@@ -98,7 +110,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 8,
+    id: 9,
     title: "GameVault",
     category: "Android Games Showcase & Hub",
     image: gamevault,
@@ -109,7 +121,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 9,
+    id: 10,
     title: "ToolSpace",
     category: "Utility & Developer Suite",
     image: toolspace,
@@ -120,7 +132,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/ToolSpace",
   },
   {
-    id: 10,
+    id: 11,
     title: "Monster",
     category: "Energy Drink Website",
     image: Monster,
@@ -131,7 +143,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 11,
+    id: 12,
     title: "AppVault",
     category: "Android App Showcase & Hub",
     image: appvault,
@@ -142,7 +154,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/app-vault",
   },
   {
-    id: 12,
+    id: 13,
     title: "DevDash",
     category: "Developer Workspace",
     image: devdash,
@@ -153,7 +165,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/devdash",
   },
   {
-    id: 13,
+    id: 14,
     title: "Stylo",
     category: "Luxury Sneaker Website",
     image: stylo,
@@ -164,7 +176,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/luxury-sneaker",
   },
   {
-    id: 14,
+    id: 15,
     title: "StudyFlow AI",
     category: "AI Learning Platform",
     image: studyflow,
@@ -175,7 +187,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 15,
+    id: 16,
     title: "PlayVerse",
     category: "Gaming Platform",
     image: playverse,
@@ -186,7 +198,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 16,
+    id: 17,
     title: "Sudo Cafe",
     category: "Cafe & Culinary Web App",
     image: sudocafe,
@@ -197,7 +209,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 17,
+    id: 18,
     title: "UH Properties",
     category: "Real Estate Platform",
     image: uhproperties,
@@ -208,7 +220,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai",
   },
   {
-    id: 18,
+    id: 19,
     title: "MiniMart AI",
     category: "AI Retail Store Management OS",
     image: minimartAi,
@@ -219,7 +231,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/minimart-ai",
   },
   {
-    id: 19,
+    id: 20,
     title: "ClientFlow",
     category: "AI Freelance Business OS",
     image: clientflow,
@@ -230,7 +242,7 @@ const projects = [
     github: "https://github.com/IchigoxBankai/client-flow",
   },
   {
-    id: 20,
+    id: 21,
     title: "AnimeHub",
     category: "Anime Companion Platform",
     image: animehub,
